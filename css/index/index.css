@@ -1,0 +1,129 @@
+/*通用*/
+.hide{
+	display: none;
+}
+/*头部*/
+/*信息栏*/
+.headerinfo{
+	width: 100%;
+	min-width: 1000px;
+	background-color: #343434;
+}
+.h_infobar{
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 26px;
+	line-height: 26px;
+	color: #FFF;
+	font-size: 14px;
+	overflow: hidden;
+	vertical-align: middle;
+}
+.hi_date{
+	float: left;
+}
+.hid_date{
+	margin-left: 10px;
+}
+.hi_log{
+	float: right;
+}
+.hil_input{
+	height: 16px;
+	line-height: 16px;
+	width: 100px;
+	padding-left: 5px;
+}
+
+/*菜单栏*/
+.headermenu{
+	width: 100%;
+	min-width: 1000px;
+	background: #24609F url(/work-2-huaNanLiGong/images/index/texture.png) no-repeat 50% 50%;
+}
+.h_menu{
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 80px;
+	overflow: hidden;
+}
+.hm_logo{
+	display: inline-block;
+	vertical-align: middle;
+	height: 60px;
+	width: 60px;
+	line-height: 80px;
+}
+.hm_title{
+	display: inline-block;
+	color: #FFF;
+	font-weight: bold;
+	letter-spacing: 2px;
+	line-height: 80px;
+	margin: 0;
+	vertical-align: middle;
+	text-indent: 5px;
+}
+.hm_menu{
+	margin-top: 10px;
+	margin-bottom: 0;
+	padding-left: 0;
+	list-style: none;
+	float: right;
+}
+.hmm_btn{
+	float: left;
+	position: relative;
+	margin-left: 5px;
+	margin-right: 5px;
+	cursor: pointer;
+}
+.hnmb_icon{
+	height: 60px;
+	width: 60px;
+	line-height: 60px;
+	text-align: center;
+	color: #4293E9;
+}
+.hmm_btn.active .hnmb_icon{
+	color: #D28632;
+}
+.hmm_btn:hover .hnmb_icon{
+	color: #D28632;
+}
+.hnmb_title{
+	position: absolute;
+	left: 0;
+	top: 0;
+	text-align: center;
+	display: inline-block;
+	height: 60px;
+	width: 60px;
+	line-height: 60px;
+	color: #FFF;
+	text-decoration: none;
+}
+
+/*主体*/
+.main{
+	width: 100%;
+	min-width: 1000px;
+	background-color: #E9E9ED;
+	min-height: 500px;
+}
+
+/*脚部*/
+.footer{
+	height: 30px;
+	width: 100%;
+	min-width: 1000px;
+	background-color: #E9E9ED;
+	border-top: 2px solid #CDCDD1;
+	text-align: center;
+	line-height: 30px;
+	color: #004F8D;
+	font-size: 14px;
+}
+
