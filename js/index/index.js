@@ -6,6 +6,12 @@ $(function(){
 	getnowtime("#hid_date");
 	// 菜单按钮跳转
 	menuBtnTurn();
+	// 绑定注册按钮点击事件
+	$("#hil_register").on("click",function(){
+		var url = rootUrl + $(this).attr("yg-url");
+		// iframe页面跳转
+		iframeTurnOtherPage(url);
+	});
 });
 
 // 改变iframe滚动条

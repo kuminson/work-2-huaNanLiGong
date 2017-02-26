@@ -1,0 +1,9 @@
+[{
+    "id":1,
+    "text":"收藏树",
+    "iconCls":"tree-folder",
+    "children":[{
+        "iconCls":"tree-file",
+        "text":"全文"
+    }]
+}]

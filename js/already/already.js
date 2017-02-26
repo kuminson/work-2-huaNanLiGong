@@ -1,7 +1,7 @@
 $(function(){
 	// 初始化树
 	$("#borrow").tree({
-	    url: rootUrl + "/html/backlog/borrowTree.json"
+	    url: rootUrl + "/html/already/borrowTree.json"
 	});
 	$("#subject").tree({
 	    url: rootUrl + "/html/backlog/subjectTree.json"

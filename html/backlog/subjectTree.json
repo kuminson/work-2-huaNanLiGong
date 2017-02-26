@@ -1,0 +1,18 @@
+[{
+    "id":1,
+    "text":"专题树",
+    "iconCls":"tree-folder",
+    "children":[{
+        "iconCls":"tree-file",
+        "text":"新建专题1"
+    },{
+        "iconCls":"tree-file",
+        "text":"新建专题2"
+    },{
+        "iconCls":"tree-file",
+        "text":"新建专题3"
+    },{
+        "iconCls":"tree-file",
+        "text":"新建专题4"
+    }]
+}]
