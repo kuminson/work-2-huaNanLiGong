@@ -7,7 +7,12 @@
 
 	// 绑定提交事件
 	$("#m_smt").on("click",function(){
-		alert("办理时间：2017-02-24，‘档案查阅’登记号：001，请到前台办理");
+		// alert("办理时间："+getTodayDate("-")+"，\n办理人：管理员，\n办理成功。\n请到待办页面关注审核进程");
+		// 打开弹出框窗口
+		$("#alert_result").dialog("open");
+		// 加载时间
+		$("#ar_time").html("办理时间："+getTodayDate("-"));
+		return false
 	});
 });
 
@@ -25,4 +30,16 @@ function bnsAddChangeEvent(){
 	});
 	// 手动触发一次
 	$(".mfhb_business").triggerHandler("change");
+}
+
+// 获取时间
+function getTodayDate(symbol){
+	var timedate = {};
+	timedate.now = new Date;
+	timedate.year = timedate.now.getFullYear();
+	timedate.month = timedate.now.getMonth()+1;
+	timedate.date = timedate.now.getDate();
+	timedate.day = timedate.now.getDay()+1;
+	var nowDate = timedate.year + symbol + timedate.month + symbol + timedate.date;
+	return nowDate;
 }

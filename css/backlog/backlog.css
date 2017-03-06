@@ -5,11 +5,65 @@ body{
 	height: 100%;
 }
 
+/*主体内容*/
 .main{
 	height: 100%;
 	width: 100%;
 }
 .mlt_iframe{
+	height: 100%;
+	width: 100%;
+}
+
+/*列表*/
+.mlaa_menu{
+	width: 100%;
+	overflow: hidden;
+	padding-left: 0;
+	list-style: none;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.mlaam_btn{
+	height: 40px;
+	width: 100%;
+	line-height: 40px;
+	text-indent: 5px;
+	border-bottom: 1px solid #D9E6ED;
+	overflow: hidden;
+	cursor: pointer;
+	margin: 0;
+	position: relative;
+}
+.mlaam_btn span{
+	position: absolute;
+	top: 13px;
+	left: 5px;
+	font-size: 16px;
+}
+.mlaam_btn.active{
+	background-color: #275CC5;
+	color: #FFF;
+}
+.mlaam_btn:hover{
+	background-color: #275CC5;
+	color: #FFF;
+}
+.mlaamb_link{
+	display: block;
+	text-decoration: none;
+	color: #000;
+	font-size: 14px;
+	text-indent: 35px;
+	height: 100%;
+	width: 100%;
+}
+.mlaam_btn.active .mlaamb_link,.mlaam_btn:hover .mlaamb_link{
+	color: #FFF;
+}
+
+/*iframe*/
+.ml_frame{
 	height: 100%;
 	width: 100%;
 }

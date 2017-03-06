@@ -1,0 +1,28 @@
+{
+	"page":1,
+	"total":20,
+	"rows":[
+		{
+			"columnno":1,
+			"yw":"\u003cimg class\u003d\u0027f_r_b frsfile\u0027 src\u003d\u0027/work-2-huaNanLiGong/images/common/search.png\u0027 style\u003d\u0027cursor:pointer\u0027/\u003e",
+			"sqsj":"2017/03/01",
+			"shzt":"通过",
+			"blzt":"已办理",
+			"cxsq":"\u003ca class\u003d\u0027grid_link\u0027\u003e撤销申请\u003c/a\u003e"
+		},{
+			"columnno":1,
+			"yw":"\u003cimg class\u003d\u0027f_r_b frsfile\u0027 src\u003d\u0027/work-2-huaNanLiGong/images/common/search.png\u0027 style\u003d\u0027cursor:pointer\u0027/\u003e",
+			"sqsj":"2017/03/01",
+			"shzt":"通过",
+			"blzt":"未办理",
+			"cxsq":"\u003ca class\u003d\u0027grid_link\u0027\u003e撤销申请\u003c/a\u003e"
+		},{
+			"columnno":1,
+			"yw":"\u003cimg class\u003d\u0027f_r_b frsfile\u0027 src\u003d\u0027/work-2-huaNanLiGong/images/common/search.png\u0027 style\u003d\u0027cursor:pointer\u0027/\u003e",
+			"sqsj":"2017/03/01",
+			"shzt":"审核中",
+			"blzt":"未办理",
+			"cxsq":"\u003ca class\u003d\u0027grid_link\u0027\u003e撤销申请\u003c/a\u003e"
+		}
+	]
+}

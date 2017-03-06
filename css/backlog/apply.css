@@ -1,0 +1,10 @@
+/*主体内容*/
+.grid{
+	width: 100%;
+}
+.hint{
+	height: 30px;
+	line-height: 30px;
+	float: right;
+	color: #d28632;
+}

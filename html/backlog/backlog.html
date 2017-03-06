@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="zh-CN">
 <head>
 	<meta charset="UTF-8">
@@ -14,7 +14,9 @@
 	<!-- 引入easyui -->
 	<link rel="stylesheet" type="text/css" href="/work-2-huaNanLiGong/resource/easyui/themes/icon.css">
 	<link rel="stylesheet" type="text/css" href="/work-2-huaNanLiGong/resource/easyui/themes/default/easyui.css">
-	<!-- 引入index样式 -->
+	<!-- 引入font-awesome样式 -->
+	<link rel="stylesheet" href="/work-2-huaNanLiGong/resource/font-awesome-4.7.0/css/font-awesome.min.css">
+	<!-- 引入自身样式 -->
 	<link rel="stylesheet" type="text/css" href="/work-2-huaNanLiGong/css/backlog/backlog.css">
 
 </head>
@@ -24,27 +26,59 @@
 		<div id="m_layout" class="easyui-layout" fit="true">
 		    <div data-options="region:'west',title:'功能导航',split:true" style="width:200px;">
 		    	<div id="ml_accordion" class="easyui-accordion" fit="true">
-		    	    <div class="mla_acc" title="我的借阅"  style="overflow:auto;padding:10px;" yg-url="/html/backlog/borrow.html">
-			    	    <ul id="borrow"></ul>
+		    	    <div class="mla_acc" title="我的借阅"  style="background-color: #cdd9e5;">
+		    	    	<ul class="mlaa_menu">
+		    	    		<li class="mlaam_btn">
+			    	    		<span class="fa fa-newspaper-o"></span>
+			    	    		<a href="javascript:void(0)" class="mlaamb_link">纸质在线借阅</a>
+		    	    		</li>
+		    	    		<li class="mlaam_btn">
+			    	    		<span class="fa fa-desktop"></span>
+			    	    		<a href="javascript:void(0)" class="mlaamb_link">电子在线借阅</a>
+		    	    		</li>
+		    	    	</ul>
 		    	    </div>
-		    	    <div class="mla_acc" title="我的专题" style="overflow:auto;padding:10px;" yg-url="/html/backlog/subject.html">
-			    	    <ul id="subject"></ul>
+		    	    <div class="mla_acc" title="预约申请" style="background-color: #cdd9e5;">
+		    	    	<ul class="mlaa_menu">
+		    	    		<li class="mlaam_btn">
+			    	    		<span class="fa fa-check-circle"></span>
+			    	    		<a href="javascript:void(0)" class="mlaamb_link">审批通过</a>
+		    	    		</li>
+		    	    		<li class="mlaam_btn">
+			    	    		<span class="fa fa-refresh"></span>
+			    	    		<a href="javascript:void(0)" class="mlaamb_link">审批中</a>
+		    	    		</li>
+		    	    	</ul>
 		    	    </div>
-		    	    <div class="mla_acc" title="我的收藏" style="overflow:auto;padding:10px;" yg-url="/html/backlog/collect.html">
-			    	    <ul id="collect"></ul>
-		    	    </div>
-		    	    <div class="mla_acc" title="历史查阅" data-options="selected:true" style="overflow:auto;padding:10px;" yg-url="/html/backlog/history.html">
-			    	    <ul id="history"></ul>
+		    	    <div class="mla_acc" title="学历学位证明" data-options="selected:true" style="background-color: #cdd9e5;">
+		    	    	<ul class="mlaa_menu">
+		    	    		<li class="mlaam_btn">
+			    	    		<span class="fa fa-address-card"></span>
+			    	    		<a href="javascript:void(0)" class="mlaamb_link">历届校友学历证明</a>
+		    	    		</li>
+		    	    		<li class="mlaam_btn">
+			    	    		<span class="fa fa-address-card-o"></span>
+			    	    		<a href="javascript:void(0)" class="mlaamb_link">历届校友学位证明</a>
+		    	    		</li>
+		    	    		<li class="mlaam_btn">
+			    	    		<span class="fa fa-address-book"></span>
+			    	    		<a href="javascript:void(0)" class="mlaamb_link">在校学生学历证明</a>
+		    	    		</li>
+		    	    		<li class="mlaam_btn">
+			    	    		<span class="fa fa-address-book-o"></span>
+			    	    		<a href="javascript:void(0)" class="mlaamb_link">在校学生学位证明</a>
+		    	    		</li>
+		    	    	</ul>
 		    	    </div>
 		    	</div>
 		    </div>
-		    <div data-options="region:'center'">
-		    	<div id="ml_tab" class="easyui-tabs" fit="true" data-options="border:false">
-		    	    
-		    	</div>
+		    <div data-options="region:'center',title:'待办事项'">
+		    	<div id="ml_tab" class="easyui-tabs" fit="true" data-options="border:false"></div>
+		    	<!-- <iframe src="" frameborder="0" id="ml_frame" class="ml_frame" scrolling="no" ></iframe> -->
 		    </div>
 		</div>
 	</div>
+	
 	<!-- 引入jQuery -->
 	<script type="text/javascript" src="/work-2-huaNanLiGong/resource/jquery/jquery-1.11.3.min.js"></script>
 	<!-- 引入easyui -->

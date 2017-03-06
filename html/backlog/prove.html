@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="zh-CN">
 <head>
 	<meta charset="UTF-8">
@@ -16,47 +16,33 @@
 	<link rel="stylesheet" type="text/css" href="/work-2-huaNanLiGong/resource/easyui/themes/default/easyui.css">
 	<!-- 引入font-awesome样式 -->
 	<link rel="stylesheet" href="/work-2-huaNanLiGong/resource/font-awesome-4.7.0/css/font-awesome.min.css">
-	<!-- 引入index样式 -->
-	<link rel="stylesheet" type="text/css" href="/work-2-huaNanLiGong/css/prove/prove.css">
+	<!-- 引入自身样式 -->
+	<link rel="stylesheet" type="text/css" href="/work-2-huaNanLiGong/css/backlog/prove.css">
 
 </head>
 <body>
 	<!-- 主体内容 -->
+	<div id="grid" class="grid">
+		<table id="g_datagrid" fit="true"></table>
+	</div>
+	<div id="hint" class="hint">
+		<span class="fa fa-exclamation-circle"></span>
+		已审核通过的申请，请尽快到档案馆现场办理。
+	</div>
+	<!-- 申请信息 -->
 	<div class="main">
-		<form class="m_form" accept-charset="utf-8">
-			<fieldset>
-				<legend class="mf_title">请选择业务</legend>
-				<h3 class="mf_head">子业务：</h3>
-				<label class="mfh_box" for="alumnusEducation">
-					<input class="mfhb_business" id="alumnusEducation" type="radio" name="business" checked="checked" />
-					历届校友学历证明
-				</label>
-				<label class="mfh_box" for="alumnusDegree">
-					<input class="mfhb_business" id="alumnusDegree" type="radio" name="business" />
-					历届校友学位证明
-				</label>
-				<label class="mfh_box" for="studentEducation">
-					<input class="mfhb_business" id="studentEducation" type="radio" name="business" />
-					在校学生学历证明
-				</label>
-				<label class="mfh_box" for="studentDegree">
-					<input class="mfhb_business" id="studentDegree" type="radio" name="business" />
-					在校学生学位证明
-				</label>
-			</fieldset>
-		</form>
 		<form class="m_form" accept-charset="utf-8">
 			<fieldset>
 				<legend class="mf_title">办理人信息</legend>
 				<ul class="mf_content">
 					<li class="mfc_list">
 						<span class="mfcl_title">姓名：</span>
-						<input type="text" class="mfcl_input">
+						<input type="text" class="mfcl_input" value="于德亮">
 					</li>
 					<li class="mfc_list">
 						<span class="mfcl_title">性别：</span>
 						<label class="mfcl_sex" for="male">
-							<input id="male" type="radio" name="sex" />
+							<input id="male" type="radio" name="sex" checked="checked" />
 							男
 						</label>
 						<label class="mfcl_sex" for="female">
@@ -67,8 +53,8 @@
 					<li class="mfc_list">
 						<span class="mfcl_title">证件类型：</span>
 						<select class="mfcl_select" >
-							<option value="" selected="selected" disabled="disabled">请选择</option>
-							<option value="IDCard">身份证</option>
+							<option value=""  disabled="disabled">请选择</option>
+							<option value="IDCard" selected="selected">身份证</option>
 							<option value="officer">军官证</option>
 							<option value="stuIDCard">学生证</option>
 							<option value="schoolCard">校园卡</option>
@@ -77,15 +63,15 @@
 					</li>
 					<li class="mfc_list">
 						<span class="mfcl_title">证件号码：</span>
-						<input type="text" class="mfcl_input">
+						<input type="text" class="mfcl_input" value="186524198808031543">
 					</li>
 					<li class="mfc_list">
 						<span class="mfcl_title">出生年月：</span>
-						<input type="text" class="mfcl_input">
+						<input type="text" class="mfcl_input" value="1988/08/03">
 					</li>
 					<li class="mfc_list">
 						<span class="mfcl_title">电话：</span>
-						<input type="text" class="mfcl_input">
+						<input type="text" class="mfcl_input" value="18614354221">
 					</li>
 				</ul>
 			</fieldset>
@@ -97,21 +83,21 @@
 					<li class="mfc_list">
 						<span class="mfcl_title">学校：</span>
 						<select class="mfcl_select" >
-							<option value="" selected="selected" disabled="disabled">请选择</option>
-							<option value="huanan">华南理工大学</option>
+							<option value=""  disabled="disabled">请选择</option>
+							<option value="huanan" selected="selected">华南理工大学</option>
 							<option value="zhongshan">中山大学</option>
 							<option value="guangzhou">广州大学</option>
 						</select>
 					</li>
 					<li class="mfc_list">
 						<span class="mfcl_title">专业：</span>
-						<input type="text" class="mfcl_input">
+						<input type="text" class="mfcl_input" value="计算机科学">
 					</li>
 					<li class="mfc_list">
 						<span class="mfcl_title">学历：</span>
 						<select class="mfcl_select">
-							<option value="" selected="selected" disabled="disabled">请选择</option>
-							<option value="bachelor">普通本科</option>
+							<option value=""  disabled="disabled">请选择</option>
+							<option value="bachelor" selected="selected">普通本科</option>
 							<option value="specialist">普通专科</option>
 							<option value="master">硕士研究生</option>
 							<option value="doctor">博士研究生</option>
@@ -120,11 +106,11 @@
 					<li class="mfc_list">
 						<span class="mfcl_title">学制：</span>
 						<select class="mfcl_select">
-							<option value="" selected="selected" disabled="disabled">请选择</option>
+							<option value=""  disabled="disabled">请选择</option>
 							<option value="2" >二年</option>
 							<option value="2.5" >二年半</option>
 							<option value="3" >三年</option>
-							<option value="4" >四年</option>
+							<option value="4" selected="selected">四年</option>
 							<option value="5" >五年</option>
 							<option value="6" >六年</option>
 							<option value="7" >七年</option>
@@ -133,24 +119,24 @@
 					</li>
 					<li class="mfc_list">
 						<span class="mfcl_title">入学时间：</span>
-						<input type="text" class="mfcl_input">
+						<input type="text" class="mfcl_input" value="2001/09/05">
 					</li>
 					<li class="mfc_list">
 						<span class="mfcl_title">毕业时间：</span>
-						<input type="text" class="mfcl_input">
+						<input type="text" class="mfcl_input" value="2005/06/07">
 					</li>
 					<li class="mfc_list education">
 						<span class="mfcl_title">毕业证号：</span>
-						<input type="text" class="mfcl_input">
+						<input type="text" class="mfcl_input" value="5420804">
 					</li>
 					<li class="mfc_list degree hide">
 						<span class="mfcl_title">学位证号：</span>
-						<input type="text" class="mfcl_input">
+						<input type="text" class="mfcl_input" value="159873245">
 					</li>
 					<li class="mfc_list degree hide">
 						<span class="mfcl_title">学位：</span>
 						<select class="mfcl_select">
-							<option value="" selected="selected" disabled="disabled">请选择</option>
+							<option value=""  disabled="disabled">请选择</option>
 							<option value="法学硕士">法学硕士</option>
 							<option value="法学博士">法学博士</option>
 							<option value="管理学硕士">管理学硕士</option>
@@ -210,7 +196,7 @@
 							<option value="兽医硕士">兽医硕士</option>
 							<option value="农业推广硕士">农业推广硕士</option>
 							<option value="城市规划硕士">城市规划硕士</option>
-							<option value="工程硕士">工程硕士</option>
+							<option value="工程硕士" selected="selected">工程硕士</option>
 							<option value="工程博士">工程博士</option>
 							<option value="临床医学博士">临床医学博士</option>
 							<option value="兽医博士">兽医博士</option>
@@ -235,19 +221,8 @@
 				</ul>
 			</fieldset>
 		</form>
-		<button id="m_smt" class="m_smt">提&nbsp;交</button>
 	</div>
-	<!-- 弹出框 -->
-	<div id="alert_result" class="easyui-dialog" style="width:300px;height:180px"
-			data-options="title:'办理成功',buttons:'#alert_btn',modal:true,closed:true">
-		<span class="ar_content first"><span class="fa fa-check-circle arc_icon"></span>您已办理成功</span>
-		<span id="ar_time" class="ar_content">办理时间：</span>
-		<span class="ar_content">办理人：管理员</span>
-		<span class="ar_content light">请到待办页面关注审核进程</span>
-	</div>
-	<div id="alert_btn">
-		<a href="#" class="easyui-linkbutton" onclick='$("#alert_result").dialog("close");'>确&nbsp;定</a>
-	</div>
+	
 	<!-- 引入jQuery -->
 	<script type="text/javascript" src="/work-2-huaNanLiGong/resource/jquery/jquery-1.11.3.min.js"></script>
 	<!-- 引入easyui -->
@@ -255,6 +230,6 @@
 	<!-- 引入通用JS文件 -->
 	<script type="text/javascript" src="/work-2-huaNanLiGong/js/common/common.js"></script>
 	<!-- 引入JS文件 -->
-	<script type="text/javascript" src="/work-2-huaNanLiGong/js/prove/prove.js"></script>
+	<script type="text/javascript" src="/work-2-huaNanLiGong/js/backlog/prove.js"></script>
 </body>
 </html>

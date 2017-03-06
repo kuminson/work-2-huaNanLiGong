@@ -1,9 +1,9 @@
 [{
     "id":1,
-    "text":"我的借阅",
+    "text":"收藏树",
     "iconCls":"tree-folder",
     "children":[{
         "iconCls":"tree-file",
-        "text":"进行中"
+        "text":"全文"
     }]
 }]

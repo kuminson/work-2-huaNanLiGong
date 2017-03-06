@@ -1,0 +1,18 @@
+[{
+    "id":1,
+    "text":"历史查阅",
+    "iconCls":"tree-folder",
+    "children":[{
+        "iconCls":"tree-file",
+        "text":"纸质档案"
+    },{
+        "iconCls":"tree-file",
+        "text":"电子档案"
+    },{
+        "iconCls":"tree-file",
+        "text":"纸质案卷档案"
+    },{
+        "iconCls":"tree-file",
+        "text":"电子案卷档案"
+    }]
+}]

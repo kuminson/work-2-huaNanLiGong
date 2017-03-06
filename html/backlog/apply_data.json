@@ -1,0 +1,59 @@
+﻿{
+	"page":1,
+	"total":20,
+	"rows":[
+		{
+			"columnno":1,
+			"yw":"\u003cimg class\u003d\u0027f_r_b frsfile\u0027 src\u003d\u0027/work-2-huaNanLiGong/images/common/search.png\u0027 style\u003d\u0027cursor:pointer\u0027/\u003e",
+			"tm":"2015年学生档案查阅",
+			"mj":"秘密",
+			"wjsj":"2015/05/06",
+			"zrdw":"技术学院",
+			"tjyysj":"2017/03/02",
+			"sptgsj":"2017/03/04",
+			"spzt":"通过",
+			"blzt":"待办理",
+			"blsj":"2017/03/06",
+			"blr":"于德亮"
+		},{
+			"columnno":2,
+			"yw":"\u003cimg class\u003d\u0027f_r_b frsfile\u0027 src\u003d\u0027/work-2-huaNanLiGong/images/common/search.png\u0027 style\u003d\u0027cursor:pointer\u0027/\u003e",
+			"tm":"2016年教师资格查阅",
+			"mj":"秘密",
+			"wjsj":"2016/05/07",
+			"zrdw":"技术学院",
+			"tjyysj":"2017/03/03",
+			"sptgsj":"2017/03/05",
+			"spzt":"未通过",
+			"blzt":"待办理",
+			"blsj":"2017/03/07",
+			"blr":"于德亮"
+		},{
+			"columnno":3,
+			"yw":"\u003cimg class\u003d\u0027f_r_b frsfile\u0027 src\u003d\u0027/work-2-huaNanLiGong/images/common/search.png\u0027 style\u003d\u0027cursor:pointer\u0027/\u003e",
+			"tm":"冶金学院学生花名册查阅",
+			"mj":"秘密",
+			"wjsj":"2013/05/07",
+			"zrdw":"冶金学院",
+			"tjyysj":"2017/03/04",
+			"sptgsj":"2017/03/05",
+			"spzt":"通过",
+			"blzt":"待办理",
+			"blsj":"2017/03/08",
+			"blr":"于德亮"
+		},{
+			"columnno":4,
+			"yw":"\u003cimg class\u003d\u0027f_r_b frsfile\u0027 src\u003d\u0027/work-2-huaNanLiGong/images/common/search.png\u0027 style\u003d\u0027cursor:pointer\u0027/\u003e",
+			"tm":"2016年创业杯获奖记录",
+			"mj":"秘密",
+			"wjsj":"2016/07/06",
+			"zrdw":"商务学院",
+			"tjyysj":"2017/03/05",
+			"sptgsj":"2017/03/06",
+			"spzt":"未通过",
+			"blzt":"待办理",
+			"blsj":"2017/03/07",
+			"blr":"于德亮"
+		}
+	]
+}

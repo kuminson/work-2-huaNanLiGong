@@ -1,22 +1,33 @@
-html{
-	width: 100%;
-}
-body{
-	width: 100%;
-}
+/*通用*/
 .hide{
 	display: none;
 }
 /*主体内容*/
-.main{
-	background-color: #FFF;
+.grid{
 	width: 100%;
+	height: 200px;
+}
+.hint{
+	height: 30px;
+	line-height: 45px;
+	float: right;
+	color: #d28632;
+}
+.main{
+	width: 100%;
+	clear: both;
 	overflow: hidden;
+}
+.grid_link{
+	color: blue;
+	text-decoration: underline;
+	cursor: pointer;
 }
 
 /*表单*/
 .m_form{
 	padding: 5px 10px;
+	font-size: 14px;
 }
 .mf_title{
 	padding: 3px 20px;
@@ -27,7 +38,7 @@ body{
 }
 .mf_head{
 	display: inline-block;
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: normal;
 	width: 130px;
 	text-align: right;
@@ -62,21 +73,21 @@ body{
 	width: 130px;
 	height: 100%;
 	text-align: right;
-	font-size: 16px;
+	font-size: 14px;
 }
 .mfcl_sex{
-	font-size: 16px;
+	font-size: 14px;
 	margin-left: 10px;
 	cursor: pointer;
 }
 .mfcl_input{
-	font-size: 16px;
+	font-size: 14px;
 	width: 260px;
 	padding: 2px;
 	border: 1px solid #CCC;
 }
 .mfcl_select{
-	font-size: 16px;
+	font-size: 14px;
 	width: 266px;
 }
 .mfcl_area{
@@ -98,25 +109,13 @@ body{
 	cursor: pointer;
 }
 
-/*弹出框*/
-.ar_content{
-	display: block;
-	text-align: center;
-	margin-bottom: 5px;
+/*表格定制*/
+.grid_row_success{
+	background-color: #d6e9c6;
 }
-.ar_content.first{
-	margin-top: 10px;
-	font-size: 16px;
-	font-weight: bold;
-	color: green;
-	margin-bottom: 10px;
+.datagrid-row-selected{
+	background-color: #ffe48d !important;
 }
-.ar_content.light{
-	color: red;
-	margin-top: 10px;
-	font-weight: bold;
-}
-.arc_icon{
-	font-size: 20px;
-	padding-right: 10px;
+.datagrid-row-over{
+	background-color: #eaf2ff !important;
 }
