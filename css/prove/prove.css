@@ -97,6 +97,10 @@ body{
 	color: #FFF;
 	cursor: pointer;
 }
+.mfh_vessel{
+	margin-left: 10px;
+	cursor: pointer;
+}
 
 /*弹出框*/
 .ar_content{

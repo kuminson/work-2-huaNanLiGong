@@ -1,0 +1,31 @@
+/*通用*/
+.hide{
+	display: none;
+}
+
+/*主体*/
+.box{
+	margin: 0 auto 15px;
+	width: 320px;
+}
+.box.first{
+	margin-top: 30px;
+}
+.hbox{
+	margin: 0 auto 15px;
+	width: 320px;
+}
+.hbox.first{
+	margin: 50px auto 15px;
+	width: 320px;
+	clear: both;
+}
+.b_submit{
+	float: right;
+}
+.b_more{
+	float: left;
+}
+.h_sex{
+	margin-left: 68px;
+}

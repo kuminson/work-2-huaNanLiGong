@@ -47,6 +47,38 @@
 		</form>
 		<form class="m_form" accept-charset="utf-8">
 			<fieldset>
+				<legend class="mf_title">办理信息</legend>
+				<h3 class="mf_head">办理方式：</h3>
+				<label class="mfh_vessel" for="scene_way">
+					<input class="mfhv_way" id="scene_way" type="radio" name="mfhv_way" checked="checked" />
+					现场办理
+				</label>
+				<label class="mfh_vessel" for="post_way">
+					<input class="mfhv_way" id="post_way" type="radio" name="mfhv_way" />
+					邮寄服务
+				</label>
+				<ul class="mf_content post hide">
+					<li class="mfc_list">
+						<span class="mfcl_title">收件人姓名：</span>
+						<input type="text" class="mfcl_input">
+					</li>
+					<li class="mfc_list">
+						<span class="mfcl_title">收件人电话：</span>
+						<input type="text" class="mfcl_input">
+					</li>
+					<li class="mfc_list">
+						<span class="mfcl_title">收件人邮编：</span>
+						<input type="text" class="mfcl_input">
+					</li>
+					<li class="mfc_list area">
+						<span class="mfcl_title">收件人地址：</span>
+						<textarea class="mfcl_area" name="" id="" cols="" rows="3" maxlength="100"></textarea>
+					</li>
+				</ul>
+			</fieldset>
+		</form>
+		<form class="m_form" accept-charset="utf-8">
+			<fieldset>
 				<legend class="mf_title">办理人信息</legend>
 				<ul class="mf_content">
 					<li class="mfc_list">

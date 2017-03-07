@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="zh-CN" style="height: 100%;width: 100%;">
+<html lang="zh-CN">
 <head>
 	<meta charset="UTF-8">
 	<title>华南理工数字档案馆</title>
@@ -14,45 +14,57 @@
 	<!-- 引入easyui -->
 	<link rel="stylesheet" type="text/css" href="/work-2-huaNanLiGong/resource/easyui/themes/icon.css">
 	<link rel="stylesheet" type="text/css" href="/work-2-huaNanLiGong/resource/easyui/themes/default/easyui.css">
-	<style>
-		.hide{
-			display: none;
-		}
-	</style>
+	<!-- 引入自身样式 -->
+	<link rel="stylesheet" type="text/css" href="/work-2-huaNanLiGong/css/register/register.css">
 </head>
-<body style="height: 100%;width: 100%;">
+<body>
 	<!-- 主体内容 -->
-	<div class="main" style="height: 100%;width: 100%;">
-		<div class="box" style="margin: 30px auto 15px auto;width: 320px;">
+	<div class="main">
+		<div class="box first" >
 			<input class="easyui-textbox" label="用户姓名：" style="width:300px">
 		</div>
-		<div class="box" style="margin: 0 auto 15px auto;width: 320px;">
+		<div class="box" >
 			<input class="easyui-textbox" label="账号：" style="width:300px">
 		</div>
-		<div class="box" style="margin: 0 auto 15px auto;width: 320px;" >
+		<div class="box"  >
 			<input class="easyui-textbox" label="密码：" style="width:300px" type="password">
 		</div>
-		<div class="box" style="margin: 0 auto 15px auto;width: 320px;" >
+		<div class="box"  >
 			<input class="easyui-textbox" label="密码确认：" style="width:300px" type="password">
 		</div>
-		<div class="box" style="margin: 0 auto 15px auto;width: 320px;">
+		<div class="box" >
 			<input class="easyui-textbox" label="身份证号：" style="width:300px">
 		</div>
-		<div class="box" style="margin: 0 auto 15px auto;width: 320px;">
+		<div class="box" >
 			<input class="easyui-textbox" label="手机号：" style="width:300px">
 		</div>
-		<div class="box" style="margin: 0 auto 15px auto;width: 320px;">
-		<button style="float: right;">提交</button>
-		<button id="more" style="float: left;" onclick="$('.hbox').removeClass('hide')">更多</button>
+		<div class="box" >
+		<button class="b_submit" >提交</button>
+		<button class="b_more" id="more">更多</button>
 		</div>
-		<div class="hbox hide" style="margin: 50px auto 15px auto;width: 320px;clear: both;">
+		<div class="hbox first hide">
 			<input class="easyui-textbox" label="邮箱：" style="width:300px" type="emall">
 		</div>
-		<div class="hbox hide" style="margin: 0 auto 15px auto;width: 320px;">
-			<input class="easyui-textbox" label="性别：" style="width:300px">
+		<div class="hbox hide" >
+			<!-- <input class="easyui-textbox" label="性别：" style="width:300px"> -->
+			<span class="h_title">性别：</span>
+			<label class="h_sex" for="male">
+				<input id="male" type="radio" name="sex" />
+				男
+			</label>
+			<label class="h_sex" for="female">
+				<input id="female" type="radio" name="sex" />
+				女
+			</label>
 		</div>
-		<div class="hbox hide" style="margin: 0 auto 15px auto;width: 320px;">
+		<div class="hbox hide" >
 			<input class="easyui-textbox" label="年龄：" style="width:300px">
+		</div>
+		<div class="hbox hide" >
+			<input class="easyui-textbox" label="邮编：" style="width:300px">
+		</div>
+		<div class="hbox hide" >
+			<input class="easyui-textbox" data-options="multiline:'true'" label="地址：" style="width:300px;height: 60px;">
 		</div>
 	</div>
 	<!-- 引入jQuery -->
@@ -61,5 +73,7 @@
 	<script type="text/javascript" src="/work-2-huaNanLiGong/resource/easyui/jquery.easyui.min.js"></script>
 	<!-- 引入通用JS文件 -->
 	<script type="text/javascript" src="/work-2-huaNanLiGong/js/common/common.js"></script>
+	<!-- 引入自身js文件 -->
+	<script type="text/javascript" src="/work-2-huaNanLiGong/js/register/register.js"></script>
 </body>
 </html>
