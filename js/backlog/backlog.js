@@ -115,7 +115,7 @@ function createTabPage(title,url){
 	var miframe = '<iframe class="mlt_iframe"  frameborder="0" scrolling="no" src="'
 				+rootUrl
 				+url
-				+'" ></iframe>'
+				+'" refresh="1"></iframe>'
 	$("#ml_tab").tabs("getTab",title).append(miframe);
 }
 
@@ -146,7 +146,16 @@ function changePanelTitle(title){
 
 // 改变iframe滚动条
 function changeIframeScroll(sele,state){
-	$(sele).attr("scrolling",state);
+	// $(sele).attr("scrolling",state);
+	var mifrm = $(sele);
+	mifrm.attr("scrolling",state);
+	// 兼容Chrome and IE
+	if(mifrm.attr("refresh") == 1){
+		mifrm.attr("refresh","0");
+		var url = mifrm.attr("src");
+		mifrm.attr("src","");
+		mifrm.attr("src",url);
+	}
 }
 
 // 获取标题
