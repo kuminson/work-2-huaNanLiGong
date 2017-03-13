@@ -1,4 +1,8 @@
 $(function(){
+	// 隐藏一级按钮
+	hideFirstMenuBtn("#hm_menu","hidemenu");
+	// 页面内容跳转
+	getUrlTurnContentPage("urlturn");
 	// 窗口变化 高度自适应
 	windowChangeWithAutoHeight();
 
@@ -7,11 +11,7 @@ $(function(){
 	// 菜单按钮跳转
 	menuBtnTurn();
 	// 绑定注册按钮点击事件
-	$("#hil_register").on("click",function(){
-		var url = rootUrl + $(this).attr("yg-url");
-		// iframe页面跳转
-		iframeTurnOtherPage(url);
-	});
+	signBtnClickEvent("#hil_register","yg-url");
 });
 
 // 改变iframe滚动条
@@ -110,3 +110,36 @@ function getnowtime(id){
 	$(id).html("今天是&nbsp;"+ timedate.year +"年"+ timedate.month +"月"+ timedate.date +"日&nbsp;"+ timedate.week);
 }
 // >>>>>>>>>>>>>>>>>>>>>>>>>>> over  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// 隐藏一级按钮
+function hideFirstMenuBtn(menuid,urlkey){
+	// 获取URL参数
+	var urlobj = GetUrlParms();
+	// 判断没有关键字 跳出
+	if(urlobj[urlkey] == undefined){
+		return false;
+	}
+	// 隐藏按钮
+	$(menuid).addClass("hide");
+}
+
+// 绑定注册按钮点击事件
+function signBtnClickEvent(btnid,eleattr){
+	$(btnid).on("click",function(){
+		var url = rootUrl + $(this).attr(eleattr);
+		// iframe页面跳转
+		iframeTurnOtherPage(url);
+	});
+}
+
+// 页面内容跳转
+function getUrlTurnContentPage(urlkey){
+	// 获取url参数
+	var urlobj = GetUrlParms();
+	// 判断没有关键字 跳出
+	if(urlobj[urlkey] == undefined){
+		return false;
+	}
+	// 跳转页面
+	iframeTurnOtherPage(urlobj[urlkey]);
+}

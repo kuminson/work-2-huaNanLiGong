@@ -4,6 +4,9 @@ html{
 body{
 	height: 100%;
 }
+.hide{
+	display: none !important;
+}
 /*主体内容*/
 .main{
 	height: 100%;
@@ -80,7 +83,10 @@ body{
 .m_btntable{
 	display: table;
 	height: 100%;
-	width: 100%;
+	/*width: 100%;*/
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
 }
 .m_btn{
 	display: table-cell;
@@ -92,31 +98,69 @@ body{
 	display: inline-block;
 	position: relative;
 	cursor: pointer;
-	margin-left: 7%;
+}
+.mb_list.fstmnu{
+	margin-left: 13%;
+}
+.mb_list.scdmnu{
+	width: 150px;
+	margin-left: 80px;
 }
 .mb_list.first{
 	margin-left: 0;
 }
+.mb_list.disabled{
+	cursor: auto;
+}
 .mbl_circle{
-	font-size: 150px;
 	color: #005394;
+}
+.mb_list.fstmnu .mbl_circle{
+	font-size: 150px;
+}
+.mb_list.scdmnu .mbl_circle{
+	font-size: 100px;
 }
 .mb_list:hover .mbl_circle{
 	color: #3396CA;
 }
+.mb_list.disabled .mbl_circle{
+	color: #CCC;
+}
+.mb_list.disabled:hover .mbl_circle{
+	color: #CCC;
+}
 .mbl_icon{
-	font-size: 70px;
 	color: #FFF;
 	position: absolute;
 	z-index: 5;
 	left: 0;
 	right: 0;
+}
+.mb_list.fstmnu .mbl_icon{
+	font-size: 70px;
 	top: 40px;
+}
+.mb_list.scdmnu .mbl_icon{
+	font-size: 60px;
+	top: 22px;
 }
 .mbl_title{
 	font-weight: normal;
 	color: #005394;
 }
+.mb_list.disabled .mbl_title{
+	color: #CCC;
+}
 .mb_list:hover .mbl_title{
 	color: #3396CA;
+}
+.mb_list.disabled:hover .mbl_title{
+	color: #CCC;
+}
+
+/*font-awesome 个性化*/
+.fa-university{
+	margin-right: -5px;
+	margin-top: -5px;
 }
