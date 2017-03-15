@@ -1,0 +1,190 @@
+/*通用*/
+.hide{
+	display: none;
+}
+/*主体内容*/
+/*搜索条*/
+.searchbar{
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	white-space: nowrap;
+	margin-top: 30px;
+	position: relative;
+}
+.s_input{
+	height: 36px;
+	line-height: 36px;
+	width: 80%;
+	border-top: 2px solid #297dd2;
+	border-left: 2px solid #297dd2;
+	border-bottom: 2px solid #297dd2;
+	border-right:0;
+	margin-left: -2px;
+	background-color: #FFF;
+	text-indent: 10px;
+	padding: 0;
+}
+.s_input:focus{
+	outline: none;
+}
+.s_btn{
+	height: 40px;
+	line-height: 40px;
+	width: 20%;
+	text-align: center;
+	background-color: #297dd2;
+	padding: 0;
+	border: 0;
+	color: #FFF;
+	cursor: pointer;
+	vertical-align: top;
+}
+.s_btn:focus{
+	outline: none;
+}
+.s_btn:active{
+	background-color: #24609f;
+}
+.s_link{
+	margin-left: 10px;
+	line-height: 40px;
+}
+.s_triangle{
+	display: block;
+	position: absolute;
+	height: 0;
+	width: 0;
+	border-width: 10px 10px 10px 0;
+	border-color: transparent #297dd2 transparent transparent;
+	border-style: solid;
+	left: 470px;
+	top: 11px;
+}
+.s_btn:active .s_triangle{
+	border-right-color: #24609f;
+}
+
+/*单选条*/
+.radiobar{
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.r_label{
+	height: 24px;
+	line-height: 24px;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+/*表格*/
+.gridbox{
+	width: 100%;
+	margin-top: 30px;
+}
+.title_link{
+	color:#0000EE;
+	text-decoration: underline;
+	margin-left: 5px;
+	margin-right: 5px;
+	cursor: pointer;
+}
+.title_link:active{
+	color: red;
+}
+
+/*个人信息补全弹出框*/
+.box{
+	height: 26px;
+	line-height: 26px;
+	width: 100%;
+	text-align: center;
+	margin-top: 10px;
+}
+.bigbox{
+	height: 40px;
+	width: 100%;
+	text-align: center;
+	margin-top: 10px;
+}
+.pp_hint{
+	margin: 0;
+	color: #d28632;
+	text-align: right;
+	height: 20px;
+	line-height: 20px;
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.must{
+	display: inline-block;
+	color: red;
+	width: 5px;
+}
+.b_title{
+	display: inline-block;
+	text-align: left;
+	width: 80px;
+	padding-right: 5px;
+	height: 26px;
+	line-height: 26px;
+}
+.b_labelbox{
+	display: inline-block;
+	width: 310px;
+	text-align: left;
+}
+.b_label{
+	margin-right: 30px;
+}
+.pp_info{
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.btn_info{
+	display: inline-block;
+	width: 320px;
+	height: 26px;
+	line-height: 26px;
+	text-align: left;
+	vertical-align: middle;
+}
+.btn_info.success{
+	color: green;
+}
+.btn_info.worry{
+	color: #d28632;
+}
+.btn_icon{
+	display: inline-block;
+	width: 20px;
+	height: 26px;
+	line-height: 26px;
+	font-size: 16px;
+	vertical-align: top;
+}
+
+/*弹出框*/
+.ar_content{
+	display: block;
+	text-align: center;
+	margin-bottom: 5px;
+}
+.ar_content.first{
+	margin-top: 10px;
+	font-size: 16px;
+	font-weight: bold;
+	color: green;
+	margin-bottom: 10px;
+}
+.ar_content.light{
+	color: red;
+	margin-top: 10px;
+	font-weight: bold;
+}
+.arc_icon{
+	font-size: 20px;
+	padding-right: 10px;
+}

@@ -1,8 +1,6 @@
 $(function(){
 	// 隐藏一级按钮
 	hideFirstMenuBtn("#hm_menu","hidemenu");
-	// 页面内容跳转
-	getUrlTurnContentPage("urlturn");
 	// 窗口变化 高度自适应
 	windowChangeWithAutoHeight();
 
@@ -12,6 +10,8 @@ $(function(){
 	menuBtnTurn();
 	// 绑定注册按钮点击事件
 	signBtnClickEvent("#hil_register","yg-url");
+	// 页面内容跳转
+	getUrlTurnContentPage("urlturn");
 });
 
 // 改变iframe滚动条
@@ -32,16 +32,25 @@ function menuBtnTurn(){
 	$(".hmm_btn").on("click",function(e){
 		$(".hmm_btn").removeClass("active");
 		$(this).addClass("active");
-		var url = rootUrl + $(this).attr("yg-url");
+		var url = $(this).attr("yg-url");
+		// 默认不二次刷新
+		var refresh = 0;
+		if($(this).attr("yg-url") != undefined){
+			refresh = $(this).attr("refresh");
+		}
 		// iframe页面跳转
-		iframeTurnOtherPage(url);
+		iframeTurnOtherPage(url,refresh);
 	});
 }
 
 // iframe页面跳转
-function iframeTurnOtherPage(url){
-	$("#main_ifrm").attr("src",url);
-	$("#main_ifrm").attr("refresh",1);
+function iframeTurnOtherPage(url,refresh){
+	$("#main_ifrm").attr("src",rootUrl + url);
+	// 默认为0
+	if(refresh == undefined){
+		refresh = 0;
+	}
+	$("#main_ifrm").attr("refresh",refresh);
 }
 
 // iframe高度弹性
@@ -126,9 +135,9 @@ function hideFirstMenuBtn(menuid,urlkey){
 // 绑定注册按钮点击事件
 function signBtnClickEvent(btnid,eleattr){
 	$(btnid).on("click",function(){
-		var url = rootUrl + $(this).attr(eleattr);
+		var url = $(this).attr(eleattr);
 		// iframe页面跳转
-		iframeTurnOtherPage(url);
+		iframeTurnOtherPage(url,1);
 	});
 }
 
@@ -138,6 +147,7 @@ function getUrlTurnContentPage(urlkey){
 	var urlobj = GetUrlParms();
 	// 判断没有关键字 跳出
 	if(urlobj[urlkey] == undefined){
+		$(".hmm_btn").eq(0).triggerHandler("click");
 		return false;
 	}
 	// 跳转页面

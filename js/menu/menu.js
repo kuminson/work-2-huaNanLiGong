@@ -11,6 +11,8 @@ $(function(){
 	}
 	// 展开二级菜单
 	showScdMenuEvent();
+	// 新页面跳转
+	menuOpenNewPage(".mb_list.scdmnu","yg-url");
 });
 
 // 绑定菜单跳转事件
@@ -24,16 +26,21 @@ function menuTurnEvent(){
 		if($(this).hasClass("scdlvl")){
 			return false;
 		}
-		var url = rootUrl + $(this).attr("yg-url");
+		var url = $(this).attr("yg-url");
+		// 默认不二次刷新
+		var refresh = 0;
+		if($(this).attr("yg-url") != undefined){
+			refresh = $(this).attr("refresh");
+		}
 		// 调用顶层函数
-		window.top.iframeTurnOtherPage(url);
+		window.top.iframeTurnOtherPage(url,refresh);
 	});
 }
 
 // 绑定搜索按钮跳转事件
 function searchBtnTurnEvent(){
 	$("#ms_btn").on("click",function(){
-		var url = rootUrl + $(this).attr("yg-url");
+		var url = $(this).attr("yg-url");
 		// 拼接关键字
 		url += "?text=" + $("#ms_input").val();
 		// 调用顶层函数
@@ -59,3 +66,14 @@ function initPageLoad(){
 }
 
 // 新页面跳转
+function menuOpenNewPage(sele,atr){
+	$("body").on("click",sele,function(){
+		// 判断无连接 跳出
+		if($(this).attr(atr) == undefined){
+			return false;
+		}
+		// 跳转链接
+		window.open(rootUrl + $(this).attr(atr));
+
+	});
+}

@@ -1,6 +1,8 @@
 ﻿$(function(){
 	// iframe增加滚动条
-	window.top.changeIframeScroll("yes");
+	if(window.top.changeIframeScroll){
+		window.top.changeIframeScroll("yes");
+	}
 
 	// 绑定子业务变更事件
 	bnsAddChangeEvent();
@@ -48,14 +50,3 @@ function wayAddChangeEvent(){
 	$(".mfhv_way").triggerHandler("change");
 }
 
-// 获取时间
-function getTodayDate(symbol){
-	var timedate = {};
-	timedate.now = new Date;
-	timedate.year = timedate.now.getFullYear();
-	timedate.month = timedate.now.getMonth()+1;
-	timedate.date = timedate.now.getDate();
-	timedate.day = timedate.now.getDay()+1;
-	var nowDate = timedate.year + symbol + timedate.month + symbol + timedate.date;
-	return nowDate;
-}

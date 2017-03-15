@@ -16,3 +16,15 @@ function GetUrlParms(){
     }
     return args;
 }
+
+// 获取时间
+function getTodayDate(symbol){
+    var timedate = {};
+    timedate.now = new Date;
+    timedate.year = timedate.now.getFullYear();
+    timedate.month = timedate.now.getMonth()+1;
+    timedate.date = timedate.now.getDate();
+    timedate.day = timedate.now.getDay()+1;
+    var nowDate = timedate.year + symbol + timedate.month + symbol + timedate.date;
+    return nowDate;
+}
