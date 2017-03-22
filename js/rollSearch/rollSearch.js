@@ -19,7 +19,6 @@ $(function(){
 	uploadBtnClickEvent();
 	// 绑定保存信息按钮点击事件
 	saveInfoBtnClickEvent();
-	// 初始化表单
 	// 原文icon点击事件
 	originalBtnClickEvent();
 	// 绑定原文权限弹出框确定按钮点击事件

@@ -81,6 +81,7 @@
 .gridbox{
 	width: 100%;
 	margin-top: 30px;
+	text-align: left;
 }
 .title_link{
 	color:#0000EE;
@@ -106,6 +107,12 @@
 	width: 100%;
 	text-align: center;
 	margin-top: 10px;
+}
+.lastbox{
+	height: 26px;
+	width: 100%;
+	text-align: center;
+	padding-bottom: 10px;
 }
 .pp_hint{
 	margin: 0;
@@ -136,7 +143,7 @@
 	text-align: left;
 }
 .b_label{
-	margin-right: 30px;
+	margin-right: 20px;
 }
 .pp_info{
 	width: 400px;

@@ -59,7 +59,7 @@
 	</div>
 
 	<!-- 弹出身份信息补全 -->
-	<div id="popup_perinfo" class="easyui-window" title="身份信息补全" style="width:500px;height:400px" data-options="modal:true,closed:true">
+	<div id="popup_perinfo" class="easyui-window" title="身份信息补全" style="width:500px;height:400px;" data-options="modal:true,closed:true">
 		<!-- 基本信息 -->
 		<div id="pp_basic" class="easyui-panel" title="用户基本信息" data-options="border:false" style="min-width:400px;padding-bottom: 10px;">
 			<div class="box" >
@@ -173,8 +173,10 @@
 	            </select>
 			</div>
 		</div>
-		<a id="pp_submit" href="javascript:void(0)" class="easyui-linkbutton" style="float: left;margin-left:50px;margin-bottom: 10px;">提&nbsp;交</a>
-		<a id="pp_cancel" href="javascript:void(0)" class="easyui-linkbutton" style="float: right;margin-right:50px;margin-bottom: 10px;">取&nbsp;消</a>
+		<div class="lastbox">
+			<a id="pp_submit" href="javascript:void(0)" class="easyui-linkbutton" style="float: left;margin-left:50px;margin-bottom: 10px;">提&nbsp;交</a>
+			<a id="pp_cancel" href="javascript:void(0)" class="easyui-linkbutton" style="float: right;margin-right:50px;margin-bottom: 10px;">取&nbsp;消</a>
+		</div>
 	</div>
 
 	<!-- 查看原文申请弹出框 -->
