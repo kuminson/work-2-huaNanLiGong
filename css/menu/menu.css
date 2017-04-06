@@ -75,7 +75,7 @@ body{
 /*按鈕組*/
 .m_btnbox{
 	position: absolute;
-	top: 200px;
+	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;

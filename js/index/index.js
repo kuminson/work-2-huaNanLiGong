@@ -1,4 +1,6 @@
 $(function(){
+	// 检查用户是否登录
+	judgeUserLogging();
 	// 隐藏一级按钮
 	hideFirstMenuBtn("#hm_menu","hidemenu");
 	// 窗口变化 高度自适应
@@ -12,6 +14,13 @@ $(function(){
 	signBtnClickEvent("#hil_register","yg-url");
 	// 页面内容跳转
 	getUrlTurnContentPage("urlturn");
+
+	// 用户登录
+	userLoginEvent();
+	// 回车登录事件
+	enterLoginKeypressEvent(".hil_input","#login");
+	// 退出按钮点击事件
+	userLogoutEvent();
 });
 
 // 改变iframe滚动条
@@ -30,17 +39,37 @@ function changeIframeScroll(state){
 // 菜单按钮跳转
 function menuBtnTurn(){
 	$(".hmm_btn").on("click",function(e){
-		$(".hmm_btn").removeClass("active");
-		$(this).addClass("active");
-		var url = $(this).attr("yg-url");
-		// 默认不二次刷新
-		var refresh = 0;
-		if($(this).attr("yg-url") != undefined){
-			refresh = $(this).attr("refresh");
+		// 判断登录权限
+		if($(this).attr("logging") == "true"){
+			var obj = this;
+			// 判断session
+			judgeSessionState({
+				timeout:function(){
+					alert("请先登录！");
+				},
+				timekeep:function(){
+					menuTurnAction(obj);
+				}
+			});
+			return false;
 		}
-		// iframe页面跳转
-		iframeTurnOtherPage(url,refresh);
+		// 菜单跳转操作
+		menuTurnAction(this);
 	});
+}
+
+// 菜单跳转操作
+function menuTurnAction(obj){
+	$(".hmm_btn").removeClass("active");
+	$(obj).addClass("active");
+	var url = $(obj).attr("yg-url");
+	// 默认不二次刷新
+	var refresh = 0;
+	if($(obj).attr("yg-url") != undefined){
+		refresh = $(obj).attr("refresh");
+	}
+	// iframe页面跳转
+	iframeTurnOtherPage(url,refresh);
 }
 
 // iframe页面跳转
