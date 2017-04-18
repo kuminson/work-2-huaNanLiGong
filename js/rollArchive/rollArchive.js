@@ -161,3 +161,100 @@ var project_column = [[
 	}
 ]];
 
+// 绑定身份信息提交按钮点击事件
+function personalInfoSubmitClickEvent(){
+	$("#pp_submit").on("click",function(){
+		// 禁用提交按钮
+		$("#pp_submit").prop("disabled",true);
+		var forminfo = {};
+		// 表单验证
+		if($("#ppt_email").textbox("getValue") == ""){
+			alert("请填写邮箱地址！");
+			return false;
+		}
+		if(!verifyEmailAdd($("#ppt_email").textbox("getValue"))){
+			alert("请填写正确的邮箱地址！");
+			return false;
+		}
+		if($("#pp_ask").textbox("getValue") == ""){
+			alert("请填写查询要求！");
+			return false;
+		}
+		if($("#pp_days").textbox("getValue") == ""){
+			alert("请填写申请天数！");
+			return false;
+		}
+		if($("#pp_aimask").textbox("getValue") == ""){
+			alert("请填写目的描述！");
+			return false;
+		}
+		if($(".b_radio[name='b_way']:checked").length < 1){
+			alert("请至少选择一种查看方式！");
+			return false;
+		}
+		if($(".b_radio[name='b_way'][value='post']").is(":checked")){
+			if($("#pp_add").textbox("getValue") == ""){
+				alert("请填写邮寄地址！");
+				return false;
+			}
+			forminfo.add = $("#pp_add").textbox("getValue");
+			forminfo.post = $("#pp_post").textbox("getValue");
+		}
+		forminfo.user = $("#ppt_user").textbox("getValue");
+		forminfo.email = $("#ppt_email").textbox("getValue");
+		forminfo.ask = $("#pp_ask").textbox("getValue");
+		forminfo.askremark = $("#pp_askremark").textbox("getValue");
+		forminfo.days = $("#pp_days").textbox("getValue");
+		forminfo.aim = $("#pp_aim").combobox("getValue");
+		forminfo.aimask = $("#pp_aimask").textbox("getValue");
+		forminfo.aimremark = $("#pp_aimremark").textbox("getValue");
+		forminfo.b_way = [];
+		$way = $(".b_radio[name='b_way']:checked");
+		for(var i=0; i<$way.length; i++){
+			forminfo.b_way.push($way.eq(i).val());
+		}
+
+		// 验证个人信息和证件是否提交
+		verifyInfoAndfileExist(function(data){
+			// 不存在 提示
+			if(!data.exist){
+				alert("请先提交个人信息和证件电子版！");
+				return false;
+			}
+			// 存在 提交信息
+			submitAllApplyInfo(forminfo,function(){
+				// 关闭身份信息
+				$("#popup_perinfo").window("close");
+				// 弹出框成功
+				$("#alert_result").dialog("open");
+				// 加载时间
+				$("#ar_time").html("办理时间："+getTodayDate("-"));
+				$("#ar_user").html("办理人："+ $("body").data("personal").realName);
+				// 激活提交按钮
+				$("#pp_submit").prop("disabled",false);
+			});
+		});
+	});
+}
+
+// 验证个人信息和证件是否提交
+function verifyInfoAndfileExist(func){
+	$.ajax({
+		url: rootUrl + "/html/common/infoFile.json",
+		type: "POST",
+		dataType: "json",
+		success:function(data){
+			if(data.state < 1){
+				return false;
+			}
+			if(func == undefined){
+				return false;
+			}
+			func(data.data);
+		},
+		error:function(){
+			alert("服务器链接失败！");
+		}
+	});
+}
+

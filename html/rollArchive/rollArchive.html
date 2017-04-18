@@ -51,7 +51,7 @@
 			</label>
 		</div>
 		<div id="gridbox" class="gridbox">
-			<table id="mg_grid"></table>
+			<table id="mg_grid" data-options="toolbar:'#mg_tb'"></table>
 			<div id="mg_tb">
 				<a id="mgt_apply" href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-yxcj',plain:true">申请查看原文</a>
 			</div>
@@ -71,7 +71,7 @@
 			<p class="pp_hint">请确保您的邮箱是可以正常接收信息，用户注册后的确认信息将发送到此</p>
 		</div>
 		<!-- 身份信息 -->
-		<div id="pp_personal" class="easyui-panel" title="用户身份信息" data-options="border:false" style="min-width:400px;padding-bottom: 10px;">
+		<div class="easyui-panel" title="用户身份信息" data-options="border:false" style="min-width:400px;padding-bottom: 10px;">
 			<div class="box" >
 				<input class="easyui-textbox pp_textbox" id="ppt_name" label="<span class='must'>*</span>姓名：">
 			</div>
@@ -105,16 +105,16 @@
 			</div>
 		</div>
 		<!-- 档案查询要求 -->
-		<div id="pp_personal" class="easyui-panel" title="档案查询要求" data-options="border:false" style="min-width:400px;padding-bottom: 10px;">
+		<div class="easyui-panel" title="档案查询要求" data-options="border:false" style="min-width:400px;padding-bottom: 10px;">
 			<div class="bigbox" >
 				<input class="easyui-textbox pp_textbox" id="pp_ask" label="<span class='must'>*</span>查询要求：" data-options="multiline:true,height:40">
 			</div>
 			<div class="box" >
-				<input class="easyui-textbox pp_textbox" id="pp_remark" label="<span class='must'></span>备注：">
+				<input class="easyui-textbox pp_textbox" id="pp_askremark" label="<span class='must'></span>备注：">
 			</div>
 		</div>
 		<!-- 证件提供 -->
-		<div id="pp_personal" class="easyui-panel" title="证件提供" data-options="border:false" style="min-width:400px;padding-bottom: 10px;">
+		<div class="easyui-panel" title="证件提供" data-options="border:false" style="min-width:400px;padding-bottom: 10px;">
 			<p class="pp_info">为了确保您申请的电子文件能顺利通过审核，请上传身份证明信息</p>
 			<p class="pp_info">证件类型：1.身份证复印件&nbsp;2.居住证&nbsp;3.其他有效证件</p>
 			<div class="box" >
@@ -127,8 +127,8 @@
 				<a id="upload_btn" href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-upload',width:80">上传文件</a>
 			</div>
 		</div>
-		<!-- 证件提供 -->
-		<div id="pp_personal" class="easyui-panel" title="证件提供" data-options="border:false" style="min-width:400px;padding-bottom: 10px;">
+		<!-- 利用目的 -->
+		<div class="easyui-panel" title="利用目的" data-options="border:false" style="min-width:400px;padding-bottom: 10px;">
 			<div class="box" >
 				<input class="easyui-textbox pp_textbox" id="pp_days" label="<span class='must'>*</span>申请天数：">
 			</div>

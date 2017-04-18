@@ -2,7 +2,7 @@
 function initSearchDataGrid(gridid){
 	$(gridid).datagrid({
 		method: "get",
-		toolbar: "#mg_tb",
+		// toolbar: "#mg_tb",
 		fit:true,
 		title:"搜索结果",
 		fitColumns: true,
@@ -60,9 +60,12 @@ function autoSetSearchValue(id){
 			if(data.state < 1){
 				return false;
 			}
-			$(id).val(data.data.realName);
 			// 缓存个人信息数据
 			$("body").data("personal",data.data);
+			if(data.data.realName == undefined){
+				return false;
+			}
+			$(id).val(data.data.realName);
 		},
 		error:function(){
 			alert("服务器链接失败！");
@@ -84,7 +87,7 @@ function setDatagridTitle(num){
 		var typename = types.eq(i).siblings(".b_text").html();
 		var valuename = types.eq(i).val();
 		taps += "|&nbsp;" +typename 
-						  +'&nbsp;共<a class="title_link" mode="patent">'
+						  +'&nbsp;共<a class="title_link" mode="'+valuename+'">'
 						  +num[valuename]+'</a>条记录&nbsp;';
 	}
 	title.html(taps);
@@ -352,68 +355,7 @@ function wayRadioChangeEvent(){
 	})
 }
 
-// 绑定身份信息提交按钮点击事件
-function personalInfoSubmitClickEvent(){
-	$("#pp_submit").on("click",function(){
-		var forminfo = {};
-		// 表单验证
-		if($("#pp_ask").textbox("getValue") == ""){
-			alert("请填写查询要求！");
-			return false;
-		}
-		if($("#pp_days").textbox("getValue") == ""){
-			alert("请填写申请天数！");
-			return false;
-		}
-		if($("#pp_aimask").textbox("getValue") == ""){
-			alert("请填写目的描述！");
-			return false;
-		}
-		if($(".b_radio[name='b_way']:checked").length < 1){
-			alert("请至少选择一种查看方式！");
-			return false;
-		}
-		if($(".b_radio[name='b_way'][value='post']").is(":checked")){
-			if($("#pp_add").textbox("getValue") == ""){
-				alert("请填写邮寄地址！");
-				return false;
-			}
-			forminfo.add = $("#pp_add").textbox("getValue");
-			forminfo.post = $("#pp_post").textbox("getValue");
-		}
-		forminfo.ask = $("#pp_ask").textbox("getValue");
-		forminfo.days = $("#pp_days").textbox("getValue");
-		forminfo.aimask = $("#pp_aimask").textbox("getValue");
-		forminfo.b_way = [];
-		$way = $(".b_radio[name='b_way']:checked");
-		for(var i=0; i<$way.length; i++){
-			forminfo.b_way.push($way.eq(i).val());
-		}
 
-		$.ajax({
-			url: rootUrl + "/html/common/allInfo.json",
-			type: "POST",
-			dataType: "json",
-			data: forminfo,
-			success:function(data){
-				if(data.state < 1){
-					return false;
-				}
-				// 关闭身份信息
-				$("#popup_perinfo").window("close");
-				// 弹出框成功
-				$("#alert_result").dialog("open");
-				// 加载时间
-				$("#ar_time").html("办理时间："+getTodayDate("-"));
-				$("#ar_user").html("办理人："+ $("body").data("personal").realName);
-			},
-			error:function(){
-				alert("服务器链接失败！");
-			}
-		})
-
-	});
-}
 
 // 初始化window添加open事件
 function addWindowOpenEvent(){
@@ -478,7 +420,7 @@ function initPersonalInfoForm(){
 	initInteractionInfo("#save_info");
 	// 清空档案查询要求
 	$("#pp_ask").textbox("reset");
-	$("#pp_remark").textbox("reset");
+	$("#pp_askremark").textbox("reset");
 	// 清空证件提供
 	$("#upload_file").filebox("reset");
 	initInteractionInfo("#upload_info");
@@ -492,4 +434,34 @@ function initPersonalInfoForm(){
 	$(".b_post").addClass("hide");
 	$("#pp_add").textbox("reset");
 	$("#pp_post").combobox("reset");
+}
+
+// 提交信息
+function submitAllApplyInfo(forminfo,func){
+	$.ajax({
+		url: rootUrl + "/html/common/allInfo.json",
+		type: "POST",
+		dataType: "json",
+		data: forminfo,
+		success:function(data){
+			if(data.state < 1){
+				return false;
+			}
+			if(func == undefined){
+				return false;
+			}
+			func();
+		},
+		error:function(){
+			alert("服务器链接失败！");
+		}
+	});
+}
+
+// 邮箱验证
+function verifyEmailAdd(email){
+	if(email.match(/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/)){
+		return true;
+	}
+	return false;
 }

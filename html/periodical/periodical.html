@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>华南理工数字档案馆</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 引入重置样式 -->
+	<link rel="stylesheet" type="text/css" href="/work-2-huaNanLiGong/resource/normalize/normalize.css">
+	<!-- html5标签兼容IE678 -->
+	<!--[if lt IE 9]>
+	<script src="/work-2-huaNanLiGong/resource/ie7/IE8.js" type="text/javascript"></script>
+	<![endif]-->
+	<!-- 引入easyui -->
+	<link rel="stylesheet" type="text/css" href="/work-2-huaNanLiGong/resource/easyui/themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="/work-2-huaNanLiGong/resource/easyui/themes/default/easyui.css">
+	<!-- 引入font-awesome样式 -->
+	<link rel="stylesheet" href="/work-2-huaNanLiGong/resource/font-awesome-4.7.0/css/font-awesome.min.css">
+	<!-- 引入自身样式 -->
+	<link rel="stylesheet" type="text/css" href="/work-2-huaNanLiGong/css/rollSearch/rollSearch.css">
+
+</head>
+<body>
+	<!-- 主体内容 -->
+	<div id="main" class="main">
+		<div class="searchbar">
+			<input id="s_input" class="s_input" type="text" 
+			/><button id="s_btn" class="s_btn" type="button">
+				<span class="s_triangle"></span>
+				搜索一下
+			</button>
+			<a class="s_link" href="javascript:void(0)">高级搜索</a>
+
+		</div>
+		<div class="radiobar">
+			<label class="r_label" for="r_all">
+				<input class="r_radio" id="r_all" type="radio" name="searchtype" value="all" checked="checked" />
+				<span class="b_text">全部档案</span>
+			</label>
+			<label class="r_label" for="r_patent">
+				<input class="r_radio searchtype" id="r_patent" type="radio" name="searchtype" value="patent" />
+				<span class="b_text">专利版权</span>
+			</label>
+			<label class="r_label" for="r_ccie">
+				<input class="r_radio searchtype" id="r_ccie" type="radio" name="searchtype" value="ccie" />
+				<span class="b_text">科研获奖证书</span>
+			</label>
+			<label class="r_label" for="r_project">
+				<input class="r_radio searchtype" id="r_project" type="radio" name="searchtype" value="project" />
+				<span class="b_text">科研项目</span>
+			</label>
+		</div>
+		<div id="gridbox" class="gridbox">
+			<table id="mg_grid" data-options="toolbar:'#mg_tb'"></table>
+			<div id="mg_tb">
+				<a id="mgt_apply" href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-yxcj',plain:true">申请查看原文</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- 引入jQuery -->
+	<script type="text/javascript" src="/work-2-huaNanLiGong/resource/jquery/jquery-1.11.3.min.js"></script>
+	<!-- 引入easyui -->
+	<script type="text/javascript" src="/work-2-huaNanLiGong/resource/easyui/jquery.easyui.min.js"></script>
+	<!-- 引入文件异步上传文件 -->
+	<script type="text/javascript" src="/work-2-huaNanLiGong/resource/ajaxFileUploade/ajaxfileupload.js"></script>
+	<!-- 引入通用JS文件 -->
+	<script type="text/javascript" src="/work-2-huaNanLiGong/js/common/common.js"></script>
+	<!-- 引入JS文件 -->
+	<script type="text/javascript" src="/work-2-huaNanLiGong/js/common/archiveSearch.js"></script>
+	<script type="text/javascript" src="/work-2-huaNanLiGong/js/rollArchive/rollArchive.js"></script>
+</body>
+</html>
