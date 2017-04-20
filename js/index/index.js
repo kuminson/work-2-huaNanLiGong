@@ -23,19 +23,6 @@ $(function(){
 	userLogoutEvent();
 });
 
-// 改变iframe滚动条
-function changeIframeScroll(state){
-	var mifrm = $("#main_ifrm");
-	mifrm.attr("scrolling",state);
-	// 兼容Chrome and IE
-	if(mifrm.attr("refresh") == 1){
-		mifrm.attr("refresh","0");
-		var url = mifrm.attr("src");
-		mifrm.attr("src","");
-		mifrm.attr("src",url);
-	}
-}
-
 // 菜单按钮跳转
 function menuBtnTurn(){
 	$(".hmm_btn").on("click",function(e){
@@ -63,23 +50,13 @@ function menuTurnAction(obj){
 	$(".hmm_btn").removeClass("active");
 	$(obj).addClass("active");
 	var url = $(obj).attr("yg-url");
-	// 默认不二次刷新
-	var refresh = 0;
-	if($(obj).attr("yg-url") != undefined){
-		refresh = $(obj).attr("refresh");
-	}
 	// iframe页面跳转
-	iframeTurnOtherPage(url,refresh);
+	iframeTurnOtherPage(url);
 }
 
 // iframe页面跳转
-function iframeTurnOtherPage(url,refresh){
+function iframeTurnOtherPage(url){
 	$("#main_ifrm").attr("src",rootUrl + url);
-	// 默认为0
-	if(refresh == undefined){
-		refresh = 0;
-	}
-	$("#main_ifrm").attr("refresh",refresh);
 }
 
 // iframe高度弹性
