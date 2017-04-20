@@ -103,6 +103,11 @@ function initForm(){
 				alert("请输入其他档案属的名称！");
 				return false;
 			}
+			// 本人身份证号
+			if(!IdentityCodeValid($("#entrustID").textbox("getValue"))){
+				alert("请正确输入委托人身份证号！");
+				return false;
+			}
 		},
 		success:function(data){
 			var bdata = jQuery.parseJSON(data);

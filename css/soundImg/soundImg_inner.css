@@ -155,6 +155,9 @@
 	color: #FFF;
 	cursor: pointer;
 }
+.mccn_title:hover{
+	color: #FF6600;
+}
 .mccn_time{
 	float: left;
 	font-size: 14px;
