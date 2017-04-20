@@ -59,7 +59,7 @@ function getAndCacheTabUrl(){
 	// ajax获取url
 	$.ajax({
 		url: rootUrl + "/html/already/tabUrl.json",
-		type: "POST",
+		type: "GET",
 		dataType: "json",
 		success:function(data){
 		// 缓存在tab页元素上

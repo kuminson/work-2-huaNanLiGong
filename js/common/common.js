@@ -145,7 +145,7 @@ function userLoginEvent(){
 function loginInfoToBackend(info){
     $.ajax({
         url: rootUrl + "/html/common/login.json",
-        type: "POST",
+        type: "GET",
         dataType: "json",
         data: {username: info.un,password:info.pw},
         success:function(data){
@@ -196,7 +196,7 @@ function userLogoutEvent(){
     $("#logout").on("click",function(){
         $.ajax({
             url: rootUrl + "/html/common/logout.json",
-            type: "POST",
+            type: "GET",
             dataType: "json",
             success:function(data){
                 if(data.state == undefined){
@@ -227,7 +227,7 @@ function userLogoutEvent(){
 function judgeUserLogging(){
     $.ajax({
         url: rootUrl + "/html/common/logging.json",
-        type: "POST",
+        type: "GET",
         dataType: "json",
         success:function(data){
             // 判断状态存在

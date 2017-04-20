@@ -54,7 +54,7 @@ function autoHeight(id){
 function autoSetSearchValue(id){
 	$.ajax({
 		url: rootUrl + "/html/common/personalInfo.json",
-		type: "POST",
+		type: "GET",
 		dataType: "json",
 		success:function(data){
 			if(data.state < 1){
@@ -243,7 +243,7 @@ function uploadBtnClickEvent(){
 		$.ajaxFileUpload({
 			url:rootUrl + "/html/common/fileUpload.json",
 			// url:rootUrl + "/php/common/fileUpload.php",   //测试处理图片的脚本路径
-			type: "POST",       //提交的方式
+			type: "GET",       //提交的方式
 	        secureuri :false,   //是否启用安全提交
 	        fileElementId :inputid,     //file控件ID
 	        dataType : 'json',  //服务器返回的数据类型
@@ -298,7 +298,7 @@ function saveInfoBtnClickEvent(){
 		// 上传
 		$.ajax({
 			url: rootUrl + "/html/common/userInfoUpload.json",
-			type: "POST",
+			type: "GET",
 			dataType: "json",
 			data: {data: userInfo},
 			success:function(data){
@@ -440,7 +440,7 @@ function initPersonalInfoForm(){
 function submitAllApplyInfo(forminfo,func){
 	$.ajax({
 		url: rootUrl + "/html/common/allInfo.json",
-		type: "POST",
+		type: "GET",
 		dataType: "json",
 		data: forminfo,
 		success:function(data){

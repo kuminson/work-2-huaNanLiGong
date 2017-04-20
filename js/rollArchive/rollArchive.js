@@ -241,7 +241,7 @@ function personalInfoSubmitClickEvent(){
 function verifyInfoAndfileExist(func){
 	$.ajax({
 		url: rootUrl + "/html/common/infoFile.json",
-		type: "POST",
+		type: "GET",
 		dataType: "json",
 		success:function(data){
 			if(data.state < 1){

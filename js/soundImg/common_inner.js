@@ -133,7 +133,7 @@ function getSideTreeData(ptype,func){
 
 	$.ajax({
 		url: rootUrl + action,
-		type: "POST",
+		type: "GET",
 		dataType: "json",
 		data: {ptype: ptype},
 		success:function(data){
@@ -172,7 +172,7 @@ function addSideTreeBtnClickEvent(pgtype){
 function getContentNewsData(page,size){
 	$.ajax({
 		url: rootUrl + "/html/common/inner_newspaper.json",
-		type: "POST",
+		type: "GET",
 		dataType: "json",
 		data: {page:page,size:size},
 		success:function(data){
@@ -215,7 +215,7 @@ function getContentImgData(page,size){
 	var field = $("body").data("field");
 	$.ajax({
 		url: rootUrl + "/html/common/inner_img.json",
-		type: "POST",
+		type: "GET",
 		dataType: "json",
 		data: {ptype: ptype,field:field,page:page,size:size},
 		success:function(data){
