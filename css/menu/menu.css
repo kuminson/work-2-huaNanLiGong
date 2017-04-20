@@ -12,6 +12,7 @@ body{
 	height: 100%;
 	width: 100%;
 	position: relative;
+	overflow: hidden;
 }
 /*背景图片*/
 .m_backimg{
@@ -75,7 +76,7 @@ body{
 /*按鈕組*/
 .m_btnbox{
 	position: absolute;
-	top: 200px;
+	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;

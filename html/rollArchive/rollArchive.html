@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>华南理工数字档案馆</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 引入重置样式 -->
+	<link rel="stylesheet" type="text/css" href="/work-2-huaNanLiGong/resource/normalize/normalize.css">
+	<!-- html5标签兼容IE678 -->
+	<!--[if lt IE 9]>
+	<script src="/work-2-huaNanLiGong/resource/ie7/IE8.js" type="text/javascript"></script>
+	<![endif]-->
+	<!-- 引入easyui -->
+	<link rel="stylesheet" type="text/css" href="/work-2-huaNanLiGong/resource/easyui/themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="/work-2-huaNanLiGong/resource/easyui/themes/default/easyui.css">
+	<!-- 引入font-awesome样式 -->
+	<link rel="stylesheet" href="/work-2-huaNanLiGong/resource/font-awesome-4.7.0/css/font-awesome.min.css">
+	<!-- 引入自身样式 -->
+	<link rel="stylesheet" type="text/css" href="/work-2-huaNanLiGong/css/rollSearch/rollSearch.css">
+
+</head>
+<body>
+	<!-- 主体内容 -->
+	<div id="main" class="main">
+		<div class="searchbar">
+			<input id="s_input" class="s_input" type="text" 
+			/><button id="s_btn" class="s_btn" type="button">
+				<span class="s_triangle"></span>
+				搜索一下
+			</button>
+			<a class="s_link" href="javascript:void(0)">高级搜索</a>
+
+		</div>
+		<div class="radiobar">
+			<label class="r_label" for="r_all">
+				<input class="r_radio" id="r_all" type="radio" name="searchtype" value="all" checked="checked" />
+				<span class="b_text">全部档案</span>
+			</label>
+			<label class="r_label" for="r_patent">
+				<input class="r_radio searchtype" id="r_patent" type="radio" name="searchtype" value="patent" />
+				<span class="b_text">专利版权</span>
+			</label>
+			<label class="r_label" for="r_ccie">
+				<input class="r_radio searchtype" id="r_ccie" type="radio" name="searchtype" value="ccie" />
+				<span class="b_text">科研获奖证书</span>
+			</label>
+			<label class="r_label" for="r_project">
+				<input class="r_radio searchtype" id="r_project" type="radio" name="searchtype" value="project" />
+				<span class="b_text">科研项目</span>
+			</label>
+		</div>
+		<div id="gridbox" class="gridbox">
+			<table id="mg_grid" data-options="toolbar:'#mg_tb'"></table>
+			<div id="mg_tb">
+				<a id="mgt_apply" href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-yxcj',plain:true">申请查看原文</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- 弹出身份信息补全 -->
+	<div id="popup_perinfo" class="easyui-window" title="身份信息补全" style="width:500px;height:400px;" data-options="modal:true,closed:true">
+		<!-- 基本信息 -->
+		<div id="pp_basic" class="easyui-panel" title="用户基本信息" data-options="border:false" style="min-width:400px;padding-bottom: 10px;">
+			<div class="box" >
+				<input class="easyui-textbox pp_textbox" id="ppt_user" label="<span class='must'></span>用户名：">
+			</div>
+			<div class="box" >
+				<input class="easyui-textbox pp_textbox" id="ppt_email" label="<span class='must'>*</span>我的邮箱：">
+			</div>
+			<p class="pp_hint">请确保您的邮箱是可以正常接收信息，用户注册后的确认信息将发送到此</p>
+		</div>
+		<!-- 身份信息 -->
+		<div class="easyui-panel" title="用户身份信息" data-options="border:false" style="min-width:400px;padding-bottom: 10px;">
+			<div class="box" >
+				<input class="easyui-textbox pp_textbox" id="ppt_name" label="<span class='must'>*</span>姓名：">
+			</div>
+			<p class="pp_hint">请输入你的真实姓名</p>
+			<div class="box" >
+				<span class="b_title"><span class='must'>*</span
+				>性别：</span>
+				<div class="b_labelbox">
+					<label class="b_label">
+						<input class="b_radio" type="radio" name="b_sex" value="male">男
+					</label>
+					<label class="b_label">
+						<input class="b_radio" type="radio" name="b_sex" value="female">女
+					</label>
+				</div>
+			</div>
+			<div class="box" >
+				<input class="easyui-textbox pp_textbox" id="ppt_idcard" label="<span class='must'>*</span>身份证号：">
+			</div>
+			<div class="box" >
+				<input class="easyui-textbox pp_textbox" id="pp_phone" label="<span class='must'></span>联系电话：">
+			</div>
+			<div class="box" >
+				<input class="easyui-textbox pp_textbox" id="pp_department" label="<span class='must'>*</span>所在部门：">
+			</div>
+			<div class="box">
+				<span id="save_info" class="btn_info">
+					<span class="btn_icon fa"></span>
+				</span>
+				<a id="save_btn" href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save',width:80">保存信息</a>
+			</div>
+		</div>
+		<!-- 档案查询要求 -->
+		<div class="easyui-panel" title="档案查询要求" data-options="border:false" style="min-width:400px;padding-bottom: 10px;">
+			<div class="bigbox" >
+				<input class="easyui-textbox pp_textbox" id="pp_ask" label="<span class='must'>*</span>查询要求：" data-options="multiline:true,height:40">
+			</div>
+			<div class="box" >
+				<input class="easyui-textbox pp_textbox" id="pp_askremark" label="<span class='must'></span>备注：">
+			</div>
+		</div>
+		<!-- 证件提供 -->
+		<div class="easyui-panel" title="证件提供" data-options="border:false" style="min-width:400px;padding-bottom: 10px;">
+			<p class="pp_info">为了确保您申请的电子文件能顺利通过审核，请上传身份证明信息</p>
+			<p class="pp_info">证件类型：1.身份证复印件&nbsp;2.居住证&nbsp;3.其他有效证件</p>
+			<div class="box" >
+				<input id="upload_file" name="ele_img" class="easyui-filebox" id="pp_electronic" label="<span class='must'>*</span>证件电子版：" data-options="width:400,prompt:'选择证件电子版...',buttonText:'选择文件'">
+			</div>
+			<div class="box">
+				<span id="upload_info" class="btn_info">
+					<span class="btn_icon fa"></span>
+				</span>
+				<a id="upload_btn" href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-upload',width:80">上传文件</a>
+			</div>
+		</div>
+		<!-- 利用目的 -->
+		<div class="easyui-panel" title="利用目的" data-options="border:false" style="min-width:400px;padding-bottom: 10px;">
+			<div class="box" >
+				<input class="easyui-textbox pp_textbox" id="pp_days" label="<span class='must'>*</span>申请天数：">
+			</div>
+			<div class="box" >
+				<select id="pp_aim" class="easyui-combobox" label="<span class='must'>*</span>利用目的：" style="width:400px;" data-options="labelWidth:90,panelHeight:null">
+	                <option value="personal" selected="selected">个人取证</option>
+	                <option value="work">工作考察</option>
+	                <option value="economy">经济建设</option>
+	                <option value="academic">学术研究</option>
+	                <option value="other">其他</option>
+	            </select>
+			</div>
+			<div class="bigbox" >
+				<input class="easyui-textbox pp_textbox" id="pp_aimask" label="<span class='must'>*</span>目的描述：" data-options="multiline:true,height:40">
+			</div>
+			<div class="box" >
+				<input class="easyui-textbox pp_textbox" id="pp_aimremark" label="<span class='must'></span>备注：">
+			</div>
+			<div class="box" >
+				<span class="b_title"><span class='must'>*</span
+				>方式：</span>
+				<div class="b_labelbox">
+					<label class="b_label">
+						<input class="b_radio" type="checkbox" name="b_way" checked="checked" value="online">
+						<span class="b_text">在线查看</span>
+					</label>
+					<label class="b_label">
+						<input class="b_radio" type="checkbox" name="b_way" value="download">
+						<span class="b_text">申请下载电子文件</span>
+					</label>
+					<label class="b_label">
+						<input class="b_radio" type="checkbox" name="b_way" value="post">
+						<span class="b_text">是否邮寄</span>
+					</label>
+				</div>
+			</div>
+			<div class="bigbox b_post hide" >
+				<input class="easyui-textbox pp_textbox" id="pp_add" label="<span class='must'>*</span>邮寄地址：" data-options="multiline:true,height:40">
+			</div>
+			<div class="box b_post hide" >
+				<select id="pp_post" class="easyui-combobox" label="<span class='must'>*</span>快递公司：" style="width:400px;" data-options="labelWidth:90,panelHeight:null">
+	                <option value="SF" selected="selected">顺风</option>
+	                <option value="EMS">EMS</option>
+	            </select>
+			</div>
+			<p class="pp_hint b_post hide">邮寄方式为货到付款</p>
+		</div>
+		<div class="lastbox">
+			<a id="pp_submit" href="javascript:void(0)" class="easyui-linkbutton" style="float: left;margin-left:50px;margin-bottom: 10px;">提&nbsp;交</a>
+			<a id="pp_cancel" href="javascript:void(0)" class="easyui-linkbutton" style="float: right;margin-right:50px;margin-bottom: 10px;">取&nbsp;消</a>
+		</div>
+	</div>
+
+	<!-- 查看原文申请弹出框 -->
+	<div id="popup_original" class="easyui-dialog" style="width:300px;height:150px;text-align: center;"
+			data-options="title:'查看原文',buttons:'#po_btn',modal:true,closed:true">
+		<p>您没有权限查看此文件</p>
+		<p>是否提交借阅申请</p>
+	</div>
+	<div id="po_btn">
+		<a id="po_ok" href="#" class="easyui-linkbutton">确&nbsp;定</a>
+		<a id="po_cancel" href="#" class="easyui-linkbutton">取&nbsp;消</a>
+	</div>
+
+	<!-- 提交结果弹出框 -->
+	<div id="alert_result" class="easyui-dialog" style="width:300px;height:180px"
+			data-options="title:'办理成功',buttons:'#alert_btn',modal:true,closed:true">
+		<p class="ar_content first"><span class="fa fa-check-circle arc_icon"></span>您的申请已提交成功</p>
+		<p id="ar_time" class="ar_content">办理时间：</p>
+		<p id="ar_user" class="ar_content">办理人：黄强</p>
+	</div>
+	<div id="alert_btn">
+		<a href="#" class="easyui-linkbutton" onclick='$("#alert_result").dialog("close");'>确&nbsp;定</a>
+	</div>
+	<!-- 引入jQuery -->
+	<script type="text/javascript" src="/work-2-huaNanLiGong/resource/jquery/jquery-1.11.3.min.js"></script>
+	<!-- 引入easyui -->
+	<script type="text/javascript" src="/work-2-huaNanLiGong/resource/easyui/jquery.easyui.min.js"></script>
+	<!-- 引入文件异步上传文件 -->
+	<script type="text/javascript" src="/work-2-huaNanLiGong/resource/ajaxFileUploade/ajaxfileupload.js"></script>
+	<!-- 引入通用JS文件 -->
+	<script type="text/javascript" src="/work-2-huaNanLiGong/js/common/common.js"></script>
+	<!-- 引入JS文件 -->
+	<script type="text/javascript" src="/work-2-huaNanLiGong/js/common/archiveSearch.js"></script>
+	<script type="text/javascript" src="/work-2-huaNanLiGong/js/rollArchive/rollArchive.js"></script>
+</body>
+</html>

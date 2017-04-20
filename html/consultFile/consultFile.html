@@ -11,14 +11,190 @@
 	<!--[if lt IE 9]>
 	<script src="/work-2-huaNanLiGong/resource/ie7/IE8.js" type="text/javascript"></script>
 	<![endif]-->
+	<!-- 引入easyui -->
+	<link rel="stylesheet" type="text/css" href="/work-2-huaNanLiGong/resource/easyui/themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="/work-2-huaNanLiGong/resource/easyui/themes/default/easyui.css">
+	<!-- 引入index样式 -->
+	<link rel="stylesheet" type="text/css" href="/work-2-huaNanLiGong/css/consultFile/consultFile.css">
 
 </head>
-<body style="height: 100%;width: 100%;">
+<body>
 	<!-- 主体内容 -->
-	<img src="/work-2-huaNanLiGong/images/consultFile/consultFile.png" alt="" style="height: 100%;width: 100%;">
+	<!-- <img src="/work-2-huaNanLiGong/images/consultFile/consultFile.png" alt="" style="height: 100%;width: 100%;"> -->
+	<!-- 头部 -->
+	<img src="/work-2-huaNanLiGong/images/consultFile/logo.png" alt="logo" class="logo">
+	<h1 class="title">华南理工大学教学类档案利用委托函</h1>
+	<form id="form">
+		<p class="f_p">本人
+			<input class="easyui-textbox textbox" name="selfName" data-options="prompt:'请输入姓名...',required:true,missingMessage:null,validType:'length[0,20]'" style="width:100px;">
+			（身份证号：
+			<input id="selfID" class="easyui-textbox textbox" name="selfID" data-options="prompt:'请输入身份证号...',required:true,missingMessage:null,validType:'length[1,20]'" style="width:180px">
+			），因
+			<span class="f_labelbox">
+				<label class="f_label">
+					<input class="fl_radio" id="" type="radio" name="aim" value="work" />
+					<span class="fl_text">工作应聘或入职</span>
+				</label>
+				<label class="f_label">
+					<input class="fl_radio" id="" type="radio" name="aim" value="replenish" />
+					<span class="fl_text">单位人事部门要求补档案</span>
+				</label>
+				<label class="f_label">
+					<input class="fl_radio" id="" type="radio" name="aim" value="graduate" />
+					<span class="fl_text">补办毕业证/学位证</span>
+				</label>
+				<label class="f_label">
+					<input class="fl_radio" id="" type="radio" name="aim" value="exam" />
+					<span class="fl_text">考硕/考博</span>
+				</label>
+				<label class="f_label">
+					<input class="fl_radio" id="" type="radio" name="aim" value="abroad" />
+					<span class="fl_text">出国留学</span>
+				</label>
+				<label class="f_label">
+					<input class="fl_radio" id="aimOther" type="radio" name="aim" value="other" />
+					<span class="fl_text">其他利用目的</span>
+				</label>
+				<span class="multitext other" id="aimOtherTextBox">
+					<input id="aimOtherText" class="easyui-textbox" data-options="multiline:true,prompt:'请输入其他利用目的...'" style="width:500px;height: 100px;">
+				</span>
+			</span>
+		</p>
+		<p class="f_p">
+			需要查阅利用本人在校学习期间的
+			<span class="f_labelbox">
+				<label class="f_label">
+					<input class="fl_radio" id="" type="checkbox" name="documentation" value="enroll" />
+					<span class="fl_text">录取名册</span>
+				</label>
+				<label class="f_label">
+					<input class="fl_radio" id="" type="checkbox" name="documentation" value="schoolRoll" />
+					<span class="fl_text">学籍表</span>
+				</label>
+				<label class="f_label">
+					<input class="fl_radio" id="" type="checkbox" name="documentation" value="grade" />
+					<span class="fl_text">成绩单</span>
+				</label>
+				<label class="f_label">
+					<input class="fl_radio" id="" type="checkbox" name="documentation" value="graduationRoll" />
+					<span class="fl_text">毕业名册</span>
+				</label>
+				<label class="f_label">
+					<input class="fl_radio" id="" type="checkbox" name="documentation" value="adultEducation" />
+					<span class="fl_text">成教学位名册</span>
+				</label>
+				<label class="f_label">
+					<input class="fl_radio" id="" type="checkbox" name="documentation" value="masterReview" />
+					<span class="fl_text">硕士学位论文评阅书</span>
+				</label>
+				<label class="f_label">
+					<input class="fl_radio" id="" type="checkbox" name="documentation" value="doctorReview" />
+					<span class="fl_text">博士学位论文评阅书</span>
+				</label>
+				<label class="f_label">
+					<input class="fl_radio" id="" type="checkbox" name="documentation" value="masterResolution" />
+					<span class="fl_text">硕士学位论文决议书</span>
+				</label>
+				<label class="f_label">
+					<input class="fl_radio" id="" type="checkbox" name="documentation" value="doctorResolution" />
+					<span class="fl_text">博士学位论文决议书</span>
+				</label>
+				<label class="f_label">
+					<input class="fl_radio" id="domOther" type="checkbox" name="documentation" value="other" />
+					<span class="fl_text">其他材料名称</span>
+				</label>
+				<span class="multitext other" id="documentationOtherTextBox">
+					<input class="easyui-textbox" id="documentationOtherText" data-options="multiline:true,prompt:'请输入其他材料名称...'" style="width:500px;height: 100px;">
+				</span>
+			</span>
+		</p>
+		<p class="f_p">
+			所查阅利用档案属：
+			<span class="f_labelbox">
+				<label class="f_label aff">
+					<input class="fl_radio" id="" type="radio" name="genus" value="doctor" />
+					<span class="fl_text">全日制普通博士学位材料</span>
+				</label>
+				<label class="f_label aff">
+					<input class="fl_radio" id="" type="radio" name="genus" value="master" />
+					<span class="fl_text">全日制普通硕士（包括学术型硕士和专业硕士）学位材料</span>
+				</label>
+				<label class="f_label aff">
+					<input class="fl_radio" id="" type="radio" name="genus" value="bachelor" />
+					<span class="fl_text">全日制普通本科学籍材料</span>
+				</label>
+				<label class="f_label aff">
+					<input class="fl_radio" id="" type="radio" name="genus" value="vocational" />
+					<span class="fl_text">全日制普通专科（含高职）学籍材料</span>
+				</label>
+				<label class="f_label aff">
+					<input class="fl_radio" id="" type="radio" name="genus" value="adult" />
+					<span class="fl_text">成人高等教育(列明学习形式：业余、函授、夜大、脱产)学籍材料</span>
+				</label>
+				<label class="f_label aff">
+					<input class="fl_radio" id="" type="radio" name="genus" value="web" />
+					<span class="fl_text">网络教育(列明学习地点)学籍材料</span>
+				</label>
+				<label class="f_label aff">
+					<input class="fl_radio" id="genusOther" type="radio" name="genus" value="other" />
+					<span class="fl_text">其他(请详细说明):</span>
+				</label>
+				<span class="multitext other" id="genusOtherTextBox">
+					<input class="easyui-textbox" id="genusOtherText" data-options="multiline:true,prompt:'请输入其他属...'" style="width:500px;height: 100px;">
+				</span>
+			</span>
+		</p>
+		<p class="f_p">
+			<span class="singletext">
+				<input class="easyui-textbox" name="enterYear" label="入学年份：" data-options="labelWidth:'100px',prompt:'请输入入学年份...',required:true,missingMessage:null,validType:'length[1,20]'" style="width:536px;">
+			</span>
+		</p>
+		<p class="f_p">
+			<span class="singletext">
+				<input class="easyui-textbox" name="graduationYear" label="毕业年份：" data-options="labelWidth:'100px',prompt:'请输入毕业年份...',required:true,missingMessage:null,validType:'length[1,20]'" style="width:536px;">
+			</span>
+		</p>
+		<p class="f_p">
+			<span class="singletext">
+				<input class="easyui-textbox" name="specialty" label="专业名称：" data-options="labelWidth:'100px',prompt:'请输入专业名称...',required:true,missingMessage:null,validType:'length[1,100]'" style="width:536px;">
+			</span>
+		</p>
+		<p class="f_p">
+			<span class="singletext">
+				<input class="easyui-textbox" name="other" label="其他特殊情况：" data-options="labelWidth:'140px',multiline:true,prompt:'请输入其他特殊情况...'" style="width:536px;height: 100px;">
+			</span>
+		</p>
+		<p class="f_p">
+			本人因故不能亲自前往学校档案馆办理，现特委托
+			<input class="easyui-textbox" name="entrustName" data-options="prompt:'请输入姓名...',required:true,missingMessage:null,validType:'length[1,20]'" style="width:100px;">
+			（受委托人身份证号：<input class="easyui-textbox" name="entrustID" data-options="prompt:'请输入身份证号...',required:true,missingMessage:null,validType:'length[1,20]'" style="width:180px;">）前往现场代为办理，特此说明。
+		</p>
+		<p class="f_p">
+			<span class="singletext">
+				<input class="easyui-textbox" name="selfPhone" label="委托人联系电话：" data-options="labelWidth:'150px',prompt:'请输入电话号码...',required:true,missingMessage:null,validType:'length[1,20]'" style="width:536px;">
+			</span>
+		</p>
+		<p class="f_p">
+			<span class="singletext">
+				<input class="easyui-textbox" name="entrustPhone" label="受委托人联系电话：" data-options="labelWidth:'170px',prompt:'请输入电话号码...',required:true,missingMessage:null,validType:'length[1,20]'" style="width:536px;">
+			</span>
+		</p>
+		<p class="f_p date">
+			<span class="fp_date" id="fp_date">2017年3月13日</span>
+		</p>
+		<p class="f_p">备注：委托人如不能亲自前来办理，可扫描或拍照委托书和身份证件，再将文件发送给受委托人打印。受委托人应带齐下列材料：委托函、委托人身份证复印件、本人身份证复印件和原件。</p>
+		<p class="f_p btn">
+			<a id="submit" href="javascript:void(0)" class="easyui-linkbutton submit" data-options="">提&nbsp;交</a>
+		</p>
+	</form>
+
 	<!-- 引入jQuery -->
 	<script type="text/javascript" src="/work-2-huaNanLiGong/resource/jquery/jquery-1.11.3.min.js"></script>
+	<!-- 引入easyui -->
+	<script type="text/javascript" src="/work-2-huaNanLiGong/resource/easyui/jquery.easyui.min.js"></script>
 	<!-- 引入通用JS文件 -->
 	<script type="text/javascript" src="/work-2-huaNanLiGong/js/common/common.js"></script>
+	<!-- 引入自身JS文件 -->
+	<script type="text/javascript" src="/work-2-huaNanLiGong/js/consultFile/consultFile.js"></script>
 </body>
 </html>

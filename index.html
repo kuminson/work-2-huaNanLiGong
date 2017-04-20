@@ -24,14 +24,14 @@
 		<div class="h_infobar">
 			<div class="hi_date">欢迎进入华南理工大学数字档案服务平台<span id="hid_date" class="hid_date">今天是</span></div>
 			<div class="hi_log" id="hi_login">
-				用户名：<input type="text" class="hil_input" />
-				密码：<input type="password" class="hil_input" />
-				<button>登录</button>
-				<button id="hil_register" yg-url="/html/register/register.html" refresh="1">注册</button>
+				用户名：<input id="username" type="text" class="hil_input" />
+				密码：<input id="password" type="password" class="hil_input" />
+				<button id="login">登录</button>
+				<button id="hil_register" yg-url="/html/register/register.html">注册</button>
 			</div>
 			<div class="hi_log hide" id="hi_loginfo">
-				<span class="hil_info">管理员，欢迎您</span>
-				<button>退出</button>
+				<span id="hil_info" class="hil_info">欢迎您</span>
+				<button id="logout">退出</button>
 			</div>
 		</div>
 	</div>
@@ -41,15 +41,15 @@
 			<img class="hm_logo" src="/work-2-huaNanLiGong/images/index/scut_new_logo.png" alt="华南理工大学logo">
 			<h1 class="hm_title">华南理工大学数字档案服务平台</h1>
 			<ul class="hm_menu" id="hm_menu">
-				<li class="hmm_btn active" yg-url="/html/menu/menu.html" refresh="0">
+				<li class="hmm_btn active" yg-url="/html/menu/menu.html" >
 					<span class="hnmb_icon fa fa-circle fa-4x"></span>
 					<a class="hnmb_title" href="javascript:void(0)">菜单</a>
 				</li>
-				<li class="hmm_btn" yg-url="/html/backlog/backlog.html" refresh="0">
+				<li class="hmm_btn" yg-url="/html/backlog/backlog.html" logging="true">
 					<span class="hnmb_icon fa fa-circle fa-4x"></span>
 					<a class="hnmb_title" href="javascript:void(0)">待办</a>
 				</li>
-				<li class="hmm_btn" yg-url="/html/already/already.html" refresh="0">
+				<li class="hmm_btn" yg-url="/html/already/already.html" logging="true">
 					<span class="hnmb_icon fa fa-circle fa-4x"></span>
 					<a class="hnmb_title" href="javascript:void(0)">已办</a>
 				</li>
@@ -58,7 +58,7 @@
 	</div>
 
 	<!-- 主体内容 -->
-	<iframe id="main_ifrm" class="main"  frameborder="0" scrolling="no" src="" ></iframe>
+	<iframe id="main_ifrm" class="main"  frameborder="0" scrolling="auto" src="" ></iframe>
 	<!-- 脚部 -->
 	<div id="footer" class="footer">版权所有&copy;2017-2018&nbsp;华南理工大学</div>
 

@@ -1,0 +1,242 @@
+/*主要内容*/
+.maininner{
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+/*侧边栏*/
+.m_side{
+	float: left;
+	width: 200px;
+}
+.ms_title{
+	margin-top: 0;
+	margin-bottom: 0;
+	height: 35px;
+	width: 100%;
+	line-height: 35px;
+	font-size: 16px;
+	font-weight: bold;
+	text-indent: 20px;
+	background-color: #104c8b;
+	color: #FFF;
+}
+.ms_class{
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-left: 0;
+	width: 198px;
+	border-left: 1px solid #104c8b;
+	border-right: 1px solid #104c8b;
+}
+.msc_list{
+	list-style: none;
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	text-indent: 20px;
+	background-color: #24609f;
+	color: #FFF;
+	width: 100%;
+	border-bottom: 1px solid #104c8b;
+	cursor: pointer;
+}
+.msc_list:hover,.msc_list.active{
+	background-color: #003877;
+}
+.mscl_icon{
+	height: 100%;
+	width: 6px;
+	float: right;
+	padding-right: 10px;
+	text-indent: 0;
+}
+.ms_btn{
+	height: 35px;
+	line-height: 35px;
+	width: 100%;
+	background-color: #104c8b;
+	color: #FFF;
+	border: none;
+	cursor: pointer;
+}
+.ms_btn:active{
+	outline: none;
+}
+
+/*内容列表*/
+.m_content{
+	float: right;
+	width: 795px;
+}
+.mc_class{
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-left: 0;
+	width: 793px;
+	border-left: 1px solid #104c8b;
+	border-right: 1px solid #104c8b;
+	overflow: hidden;
+	background-color: #24609f;
+	min-height: 368px;
+}
+/*图片列表*/
+.mcc_list{
+	float: left;
+	width: 180px;
+	list-style: none;
+	margin-top: 20px;
+	margin-left: 15px;
+	overflow: hidden;
+}
+.mccl_imgbox{
+	width: 100%;
+	height: 120px;
+	overflow: hidden;
+	cursor: pointer;
+	position: relative;
+}
+.mccl_icon{
+	display: inline-block;
+	position: absolute;
+	line-height: 120px;
+	width: 100%;
+	text-align: center;
+	color: #FFF;
+	z-index: 5;
+	font-size: 50px;
+}
+.mccl_icon:hover{
+	color: #FF6600;
+}
+.mccl_img{
+	min-width: 100%;
+	min-height: 120px;
+	height: 0.001%;
+}
+.mccl_title{
+	margin-top: 20px;
+	margin-bottom: 5px;
+	color: #FFF;
+	text-align: center;
+	cursor: pointer;
+}
+.mccl_title:hover{
+	color: #FF6600;
+}
+.mccl_click{
+	float: left;
+	color: #FFF;
+	margin-left: 10px;
+	font-size: 14px;
+}
+.mccl_class{
+	float: right;
+	color: #FFF;
+	margin-right: 10px;
+	font-size: 14px;
+}
+/*新闻列表*/
+.mcc_news{
+	width: 240px;
+	margin-left: 15px;
+	margin-top: 40px;
+	float: left;
+	overflow: hidden;
+	list-style: none;
+}
+.mccn_title{
+	margin-top: 0;
+	margin-bottom: 5px;
+	color: #FFF;
+	cursor: pointer;
+}
+.mccn_time{
+	float: left;
+	font-size: 14px;
+	color: #DDD;
+}
+.mccn_period{
+	float: left;
+	font-size: 14px;
+	color: #DDD;
+	margin-left: 10px;
+}
+
+/*信息*/
+.mc_info{
+	height: 30px;
+	line-height: 30px;
+	text-align: right;
+	color: #CCC;
+	font-size: 14px;
+	margin-top: 0;
+	margin-bottom: 0;
+	background-color: #24609f;
+	border-left: 1px solid #104c8b;
+	border-right: 1px solid #104c8b;
+	padding-right: 20px;
+}
+/*分页*/
+.mc_pagbox{
+	background-color: #104c8b;
+	border-left: 1px solid #104c8b;
+	border-right: 1px solid #104c8b;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.mcp_paging{
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.pagination{
+	display: inline-block;
+	padding-left: 0;
+}
+.pagination > li{
+	display: inline;
+}
+.pagination > li > a{
+	background-color: #fff;
+    border: 1px solid #ddd;
+    color: #337ab7;
+    float: left;
+    line-height: 1.42857;
+    margin-left: -1px;
+    padding: 6px 12px;
+    position: relative;
+    text-decoration: none;
+}
+.pagination > .first > a{
+	border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    margin-left: 0;
+}
+.pagination > .disabled > a{
+	background-color: #fff;
+    border-color: #ddd;
+    color: #777;
+    cursor: not-allowed;
+}
+.pagination > .last > a{
+	border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.pagination > .active > a,.pagination > .active > a:hover{
+	background-color: #337ab7;
+    border-color: #337ab7;
+    color: #fff;
+    cursor: default;
+    z-index: 3;
+}
+.pagination > li > a:hover{
+	background-color: #EEE;
+	border-color: #DDD;
+	color: #23527c;
+	z-index: 2;
+}

@@ -1,0 +1,70 @@
+.logo{
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+.title{
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 30px;
+}
+.f_p{
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	text-indent: 2em;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 30px;
+}
+.f_p.date{
+	text-align: right;
+}
+.f_p.btn{
+	text-align: center;
+}
+.fp_date{
+	margin-right: 20px;
+}
+.f_labelbox{
+	display: block;
+	text-indent: 0;
+	margin-left: 4em;
+}
+.f_label{
+	font-weight: normal;
+	display: inline-block;
+	/*text-indent: 4em;*/
+	line-height: 20px;
+	width: 300px;
+	margin-top: 4px;
+}
+.f_label.aff{
+	width: 800px;
+}
+.textbox{
+	text-indent: 0;
+}
+.multitext{
+	display: block;
+	margin-top: 4px;
+	/*text-indent: 4em;*/
+}
+.singletext{
+	text-indent: 0;
+}
+.submit{
+	text-indent: 0;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+
+/*easyui 个性化设置*/
+.textbox .textbox-prompt{
+	font-size: 16px;
+}
+.textbox .textbox-text{
+	font-size: 16px;
+}
