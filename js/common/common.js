@@ -45,6 +45,17 @@ function getTodayDate(symbol){
     return nowDate;
 }
 
+// 获取时间对象
+function getTodayDateObj(){
+    var timedate = {};
+    timedate.now = new Date;
+    timedate.year = timedate.now.getFullYear();
+    timedate.month = timedate.now.getMonth()+1;
+    timedate.date = timedate.now.getDate();
+    timedate.day = timedate.now.getDay()+1;
+    return timedate;
+}
+
 // 根据状态跳转
 function judgeStateAction(XHR){
     // 获取data
