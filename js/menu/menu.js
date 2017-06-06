@@ -1,6 +1,8 @@
 $(function(){
 	// 页面初始化
 	initPageLoad();
+	// 获取并加载二级菜单数据
+	getScdMnuData();
 	// 绑定菜单跳转事件
 	menuTurnEvent();
 	// 绑定搜索按钮跳转事件
@@ -16,6 +18,48 @@ $(function(){
 	// 获取一百来个字的内容
 	getTextToTitle("#mb_remote");
 });
+
+// 获取二级菜单数据
+function getScdMnuData(){
+	$.ajax({
+		url: rootUrl + "/html/menu/scdmnu.json",
+		type: "GET",
+		dataType: "json",
+		success:function(data){
+			// 加载二级菜单
+			loadScdMnu(data);
+		},
+		error:function(){
+			// alert("链接服务器失败");
+		}
+	});
+}
+
+// 加载二级菜单
+function loadScdMnu(data){
+	// 清空原有
+	$("#scdmnu").html("");
+	// 拼接标签
+	var tags = "";
+	var rowpls;
+	for(var i=0,dlth=data.length; i<dlth; i++){
+		// 判断是否是行首
+		if(i%4 == 0){
+			rowpls = "first";
+		}else{
+			rowpls = "";
+		}
+		tags += '<li class="mb_list scdmnu '+rowpls+'" yg-url="'
+				+ data[i].url +'" logging="'+ data[i].logging +'">'
+				+'<span class="mbl_circle fa fa-circle"></span>'
+				+'<span class="mbl_icon fa '+ data[i].icon +'"></span>'
+				+'<h3 class="mbl_title">'+ data[i].title +'</h3>'
+				+'</li>';
+	}
+	// 加载标签
+	$("#scdmnu").append(tags);
+}
+
 
 // 绑定菜单跳转事件
 function menuTurnEvent(){
